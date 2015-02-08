@@ -16,7 +16,7 @@ There are two options for Windows users.
 1. Open the shell, navigate to the "/build" directory and type `java -jar SchedulerProject.jar`
   
 ##How to Access
-Access the application by opening your favorite web browser and typing `localhost:1337/app/date` into the address bar, or by clicking the link [here](localhost:1337/app/date).
+Access the application by opening your favorite web browser and typing `localhost:1337/app/date` into the address bar, or by clicking the link [here](http://localhost:1337/app/date).
 
 ##Comments
 This application is currently a work in progress. Anything stated in the document is subject to possible change.
