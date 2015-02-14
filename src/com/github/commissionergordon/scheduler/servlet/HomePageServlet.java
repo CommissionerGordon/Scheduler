@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 import java.util.Date;
 import java.util.Scanner;
 
-public class WebsiteServlet extends HttpServlet {
+public class HomePageServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     File file = new File(getClass().getResource("../html/Home.html").getPath());
