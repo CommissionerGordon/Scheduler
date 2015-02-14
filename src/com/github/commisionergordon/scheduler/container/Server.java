@@ -7,12 +7,6 @@ import org.apache.catalina.startup.Tomcat;
 
 import java.io.File;
 
-/*
-For some reason, the server.isRunning() boolean is never changed. Could be
-a thread thing, but I have no idea. All the things that depend on server.isRunning()
-have been commented out.
-*/
-
 public class Server {
     
     private static final String TITLE = "Scheduler Server";
@@ -33,17 +27,21 @@ public class Server {
     public void start() throws LifecycleException {
         System.out.println();
         System.out.println("Starting Tomcat Server on port " + port);
+        running = true;
+        
+        // All initialization should be done before the tomcat object is touched
         tomcat.setPort(port);
         tomcat.start();
         tomcat.getServer().await();
-        running = true;
     }
     
     public void stop() throws LifecycleException {
         System.out.println();
         System.out.println("Stopping Tomcat Server...");
-        tomcat.stop();
         running = false;
+        
+        // All objects must be stopped before tomcat is touched
+        tomcat.stop();
     }
     
     public int getPort() {

@@ -1,7 +1,7 @@
 package com.github.commisionergordon.scheduler.app.gui;
 
 import com.github.commisionergordon.scheduler.app.Main;
-import com.github.commisionergordon.scheduler.app.ServerTask;
+import com.github.commisionergordon.scheduler.app.ServerRunnable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -13,13 +13,7 @@ import org.apache.catalina.LifecycleException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/*
-For some reason, the server.isRunning() boolean is never changed. Could be
-a thread thing, but I have no idea. All the things that depend on server.isRunning
-have been commented out.
-*/
-
-public class WindowController implements Initializable{
+public class WindowController implements Initializable {
     
     @FXML
     TextField portField;
@@ -54,36 +48,41 @@ public class WindowController implements Initializable{
             }
         });
         
-        /*
         if(Main.getServer().isRunning() == false) {
             stopButton.setDisable(true);
         }
-        */
     }
     
     @FXML
     public void startServer() {
-        //if(Main.getServer().isRunning())
-            //return;
-        
+        if(Main.getServer().isRunning())
+            return;
+
         if(portField.getText().isEmpty())
             return;
 
         setServerPort(Integer.parseInt(portField.getText()));
-        Main.setServerThread(new Thread(new ServerTask()));
+        ServerRunnable serverRunnable = new ServerRunnable(Main.getServer());
+        Main.setServerThread(new Thread(serverRunnable));
         Main.getServerThread().start();
-        //updateButtons();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        updateButtons();
     }
 
     @FXML
     public void stopServer() {
-        //if(Main.getServer().isRunning() == false)
-            //return;
+        if(Main.getServer().isRunning() == false)
+            return;
         
         try {
             Main.getServer().stop();
-            Main.setServerThread(null);
-            //updateButtons();
+            updateButtons();
         } catch (LifecycleException e) {
             e.printStackTrace();
         }
@@ -98,7 +97,6 @@ public class WindowController implements Initializable{
     
     private void updateButtons() {
         boolean running = Main.getServer().isRunning();
-        System.out.println("Updating Buttons: " + running);
         
         if(running) {
             startButton.setDisable(true);

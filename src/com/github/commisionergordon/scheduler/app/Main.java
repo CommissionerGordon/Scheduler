@@ -13,6 +13,7 @@ import java.io.IOException;
 public class Main extends Application {
     
     private static Thread serverThread;
+    private static ServerRunnable serverRunnable;
     private static Server server;
     private static Stage stage;
     
@@ -38,12 +39,8 @@ public class Main extends Application {
     public static void setServerThread(Thread thread) {
         serverThread = thread;
     }
-
+    
     public static Server getServer() {
         return server;
-    }
-    
-    public static Stage getStage() {
-        return stage;
     }
 }
