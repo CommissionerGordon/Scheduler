@@ -1,7 +1,7 @@
-package com.github.commisionergordon.scheduler.app.gui;
+package com.github.commissionergordon.scheduler.app.gui;
 
-import com.github.commisionergordon.scheduler.app.Main;
-import com.github.commisionergordon.scheduler.app.ServerRunnable;
+import com.github.commissionergordon.scheduler.app.Main;
+import com.github.commissionergordon.scheduler.app.ServerRunnable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;

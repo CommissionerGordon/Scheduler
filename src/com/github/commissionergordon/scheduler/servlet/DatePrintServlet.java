@@ -1,4 +1,4 @@
-package com.github.commisionergordon.scheduler.servlet;
+package com.github.commissionergordon.scheduler.servlet;
 
 import java.io.IOException;
 import java.util.Date;

@@ -1,6 +1,6 @@
-package com.github.commisionergordon.scheduler.app;
+package com.github.commissionergordon.scheduler.app;
 
-import com.github.commisionergordon.scheduler.container.Server;
+import com.github.commissionergordon.scheduler.container.Server;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

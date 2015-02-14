@@ -1,6 +1,7 @@
-package com.github.commisionergordon.scheduler.container;
+package com.github.commissionergordon.scheduler.container;
 
-import com.github.commisionergordon.scheduler.servlet.DatePrintServlet;
+import com.github.commissionergordon.scheduler.servlet.DatePrintServlet;
+import com.github.commissionergordon.scheduler.servlet.WebsiteServlet;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
@@ -21,6 +22,8 @@ public class Server {
         Context rootCtx = tomcat.addContext("/app", base.getAbsolutePath());
         Tomcat.addServlet(rootCtx, "dateServlet", new DatePrintServlet());
         rootCtx.addServletMapping("/date", "dateServlet");
+        Tomcat.addServlet(rootCtx, "websiteServlet", new WebsiteServlet());
+        rootCtx.addServletMapping("/web", "websiteServlet");
         running = false;
     }
     
