@@ -29,6 +29,14 @@ h3 {
 	text-decoration: underline;
 }
 
+/* Unordered Lists - No bullets */
+ul#no-bullets li {
+    font-family: Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #2A6496;
+    list-style-type: none;
+}
+
 /* Navigation */
 ul#page-nav li {
 	font-family: Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;

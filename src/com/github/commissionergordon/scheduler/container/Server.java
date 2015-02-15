@@ -1,5 +1,6 @@
 package com.github.commissionergordon.scheduler.container;
 
+import com.github.commissionergordon.scheduler.servlet.CSSPageServlet;
 import com.github.commissionergordon.scheduler.servlet.DatePrintServlet;
 import com.github.commissionergordon.scheduler.servlet.HomePageServlet;
 import org.apache.catalina.Context;
@@ -20,10 +21,16 @@ public class Server {
         tomcat = new Tomcat();
         File base = new File(System.getProperty("java.io.tmpdir"));
         Context rootCtx = tomcat.addContext("/app", base.getAbsolutePath());
+
         Tomcat.addServlet(rootCtx, "dateServlet", new DatePrintServlet());
         rootCtx.addServletMapping("/date", "dateServlet");
+
         Tomcat.addServlet(rootCtx, "homePageServlet", new HomePageServlet());
         rootCtx.addServletMapping("/home", "homePageServlet");
+
+        Tomcat.addServlet(rootCtx, "CSSPageServlet", new CSSPageServlet());
+        rootCtx.addServletMapping("/default-template.css", "CSSPageServlet");
+
         running = false;
     }
     
