@@ -18,7 +18,7 @@ There are two options for Windows users.
 Select which port number you want to run the server on, and click Start.
   
 ##How to Access
-Access the application by opening your favorite web browser and typing `localhost:<portnumber>/app/date` into the address bar, or by clicking the link [here](http://localhost:1337/app/date) and changing the port number.
+Access the application by opening your favorite web browser and typing `localhost:<portnumber>/app/home` into the address bar, or by clicking the link [here](http://localhost:1337/app/home) and changing the port number.
 
 ##!Warning!
 Make sure to hit the Stop button, and double check that you can no longer access the site before closing the window. Closing the window while the server is running **DOES NOT** stop the server.
