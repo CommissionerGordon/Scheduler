@@ -1,7 +1,7 @@
-package com.github.commissionergordon.scheduler.app.gui;
+package com.github.commissionergordon.scheduler.main.gui;
 
-import com.github.commissionergordon.scheduler.app.Main;
-import com.github.commissionergordon.scheduler.app.ServerRunnable;
+import com.github.commissionergordon.scheduler.main.Main;
+import com.github.commissionergordon.scheduler.main.ServerRunnable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -63,8 +63,8 @@ public class WindowController implements Initializable {
 
         setServerPort(Integer.parseInt(portField.getText()));
         ServerRunnable serverRunnable = new ServerRunnable(Main.getServer());
-        Main.setServerThread(new Thread(serverRunnable));
-        Main.getServerThread().start();
+        Thread serverThread = new Thread(serverRunnable);
+        serverThread.start();
 
         try {
             Thread.sleep(2000);

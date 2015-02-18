@@ -1,6 +1,5 @@
-package com.github.commissionergordon.scheduler.app;
+package com.github.commissionergordon.scheduler.main;
 
-import com.github.commissionergordon.scheduler.container.Server;
 import org.apache.catalina.LifecycleException;
 
 public class ServerRunnable implements Runnable {

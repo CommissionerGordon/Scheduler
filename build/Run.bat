@@ -1,1 +1,2 @@
-java -jar SchedulerProject.jar
+@ECHO OFF
+java -jar SchedulerServer.jar

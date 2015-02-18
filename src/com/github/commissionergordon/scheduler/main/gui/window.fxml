@@ -4,7 +4,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.commissionergordon.scheduler.app.gui.WindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.commissionergordon.scheduler.main.gui.WindowController">
    <children>
       <Button fx:id="startButton" layoutX="14.0" layoutY="45.0" mnemonicParsing="false" onAction="#startServer" prefHeight="25.0" prefWidth="100.0" text="Start" />
       <Button fx:id="stopButton" layoutX="124.0" layoutY="45.0" mnemonicParsing="false" onAction="#stopServer" prefHeight="25.0" prefWidth="100.0" text="Stop" />

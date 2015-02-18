@@ -1,35 +1,23 @@
-package com.github.commissionergordon.scheduler.container;
+package com.github.commissionergordon.scheduler.main;
 
-import com.github.commissionergordon.scheduler.servlet.CSSPageServlet;
-import com.github.commissionergordon.scheduler.servlet.DatePrintServlet;
-import com.github.commissionergordon.scheduler.servlet.HomePageServlet;
-import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
 
+import javax.servlet.ServletException;
 import java.io.File;
 
 public class Server {
     
     private static final String TITLE = "Scheduler Server";
+    private final String webappDir = "webapp/";
     
     private int port = 1337;
     private boolean running;
     private Tomcat tomcat;
     
-    public Server() {
+    public Server() throws ServletException {
         tomcat = new Tomcat();
-        File base = new File(System.getProperty("java.io.tmpdir"));
-        Context rootCtx = tomcat.addContext("/app", base.getAbsolutePath());
-
-        Tomcat.addServlet(rootCtx, "dateServlet", new DatePrintServlet());
-        rootCtx.addServletMapping("/date", "dateServlet");
-
-        Tomcat.addServlet(rootCtx, "homePageServlet", new HomePageServlet());
-        rootCtx.addServletMapping("/home", "homePageServlet");
-
-        Tomcat.addServlet(rootCtx, "CSSPageServlet", new CSSPageServlet());
-        rootCtx.addServletMapping("/default-template.css", "CSSPageServlet");
+        tomcat.addWebapp("", new File(webappDir).getAbsolutePath());
 
         running = false;
     }
