@@ -13,4 +13,9 @@ public class DayConstraint {
         this.constraint_id = constraint_id;
         this.day = day;
     }
+
+    DayConstraint(DayConstraint dayConstraint){
+        this.constraint_id = dayConstraint.constraint_id;
+        this.day = dayConstraint.day;
+    }
 }

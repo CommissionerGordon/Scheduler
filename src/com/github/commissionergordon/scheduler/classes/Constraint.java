@@ -11,4 +11,9 @@ public class Constraint {
         this.activity_id = activity_id;
         this.id = id;
     }
+
+    Constraint(Constraint constraint){
+        this.activity_id = constraint.activity_id;
+        this.id = constraint.id;
+    }
 }

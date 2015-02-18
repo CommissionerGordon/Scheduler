@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/Scheduler/lib/tomcat-embed-jasper.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/Scheduler/lib/tomcat-embed-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/Scheduler/lib/tomcat-embed-logging-log4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/Scheduler/lib/tomcat-embed-el.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/Scheduler/lib/tomcat-embed-websocket.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/Scheduler/lib/tomcat-embed-logging-juli.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/Scheduler/lib/ecj-4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/Scheduler/lib/tomcat-dbcp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
