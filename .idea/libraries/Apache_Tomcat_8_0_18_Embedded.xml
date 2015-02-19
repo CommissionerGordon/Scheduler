@@ -1,16 +1,10 @@
 <component name="libraryTable">
   <library name="Apache Tomcat 8.0.18 Embedded">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/build/Scheduler/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded/tomcat-embed-logging-log4j.jar!/" />
-      <root url="jar://$PROJECT_DIR$/build/Scheduler/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded/ecj-4.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/build/Scheduler/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded/tomcat-dbcp.jar!/" />
-      <root url="jar://$PROJECT_DIR$/build/Scheduler/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded/tomcat-embed-el.jar!/" />
-      <root url="jar://$PROJECT_DIR$/build/Scheduler/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded/tomcat-embed-jasper.jar!/" />
-      <root url="jar://$PROJECT_DIR$/build/Scheduler/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded/tomcat-embed-logging-juli.jar!/" />
-      <root url="jar://$PROJECT_DIR$/build/Scheduler/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded/tomcat-embed-core.jar!/" />
-      <root url="jar://$PROJECT_DIR$/build/Scheduler/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded/tomcat-embed-websocket.jar!/" />
+      <root url="file://$PROJECT_DIR$/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/webapp/WEB-INF/lib/Apache Tomcat 8.0.18 Embedded" recursive="false" />
   </library>
 </component>

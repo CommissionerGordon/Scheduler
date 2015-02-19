@@ -15,8 +15,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static org.jooq.impl.DSL.*;
-
 @WebServlet(
         name = "DBTestServlet",
         urlPatterns = "/dbtest"
@@ -36,7 +34,7 @@ public class DBTestServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             Connection conn = DriverManager.getConnection("jdbc:h2:./db/scheduler", "sa", "");
-            DSLContext create = using(conn);
+            DSLContext create = DSL.using(conn);
 
             // Create User table
             create.execute("CREATE TABLE IF NOT EXISTS user(user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, user_name VARCHAR(30));");
