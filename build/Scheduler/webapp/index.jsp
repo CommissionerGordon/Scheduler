@@ -11,7 +11,7 @@
 <body>
 
 <!-- Link to Table of Contents page -->
-<div id="head-hyperlink"><h1><a href="home" style="text-decoration: none"><b>Scheduler Sample Website</b></a></h1></div>
+<div id="head-hyperlink"><h1><a href="" style="text-decoration: none"><b>Scheduler Sample Website</b></a></h1></div>
 
 <h2>Project Information</h2>
 
