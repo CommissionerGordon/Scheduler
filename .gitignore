@@ -1,5 +1,6 @@
 # IntelliJ Files
-# /.idea
+/.idea
 /out
 *iml
 /tomcat.*
+/db

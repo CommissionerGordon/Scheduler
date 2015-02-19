@@ -13,6 +13,8 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Server server;
+    private static final String webappDir = "webapp/";
+    private static final String dbDir = "db/";
     
     public static void main(String[] args) throws IOException, LifecycleException, ServletException {
         server = new Server();
@@ -29,5 +31,13 @@ public class Main extends Application {
 
     public static Server getServer() {
         return server;
+    }
+
+    public static String getWebappDir() {
+        return webappDir;
+    }
+
+    public static String getDbDir() {
+        return dbDir;
     }
 }

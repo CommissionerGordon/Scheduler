@@ -9,7 +9,7 @@ import java.io.File;
 public class Server {
     
     private static final String TITLE = "Scheduler Server";
-    private final String webappDir = "webapp/";
+
     
     private int port = 1337;
     private boolean running;
@@ -17,7 +17,7 @@ public class Server {
     
     public Server() throws ServletException {
         tomcat = new Tomcat();
-        tomcat.addWebapp("", new File(webappDir).getAbsolutePath());
+        tomcat.addWebapp("", new File(Main.getWebappDir()).getAbsolutePath());
 
         running = false;
     }
@@ -50,7 +50,7 @@ public class Server {
         System.out.println("Setting Tomcat Server port to " + port);
         this.port = port;
     }
-    
+
     public boolean isRunning() {
         return running;
     }

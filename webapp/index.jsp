@@ -33,7 +33,8 @@
 <!-- Navigation list - Uses display:inline and display:table elements -->
 <nav>
     <div class="table"><ul id="page-nav">
-        <a href="/date"><li>Date Servlet</li></a>
+        <a href="/date"><li>Current Date</li></a>
+        <a href="/dbtest"><li>DB Test</li></a>
         <!-- a href="#" may refresh the page -->
     </ul></div>
 </nav>
