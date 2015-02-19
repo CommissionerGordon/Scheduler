@@ -19,4 +19,17 @@ public class WeekDayConstraint {
         this.can = can;
         this.constraint_id = constraint_id;
     }
+
+    WeekDayConstraint(WeekDayConstraint weekDayConstraint){
+        this.can = weekDayConstraint.can;
+        this.constraint_id = weekDayConstraint.constraint_id;
+
+        this.monday = weekDayConstraint.monday;
+        this.tuesday = weekDayConstraint.tuesday;
+        this.wednesday = weekDayConstraint.wednesday;
+        this.thursday = weekDayConstraint.thursday;
+        this.friday = weekDayConstraint.friday;
+        this.saturday = weekDayConstraint.saturday;
+        this.sunday = weekDayConstraint.sunday;
+    }
 }

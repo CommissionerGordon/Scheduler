@@ -23,4 +23,21 @@ public class MonthConstraint {
         this.can = can;
         this.constraint_id = constraint_id;
     }
+
+    MonthConstraint(MonthConstraint monthConstraint){
+        this.can = monthConstraint.can;
+        this.constraint_id = monthConstraint.constraint_id;
+        this.january = monthConstraint.january;
+        this.february = monthConstraint.february;
+        this.march = monthConstraint.march;
+        this.april = monthConstraint.april;
+        this.may = monthConstraint.may;
+        this.june = monthConstraint.june;
+        this.july = monthConstraint.july;
+        this.august = monthConstraint.august;
+        this.september = monthConstraint.september;
+        this.october = monthConstraint.october;
+        this.november = monthConstraint.november;
+        this.december = monthConstraint.december;
+    }
 }

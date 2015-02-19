@@ -17,4 +17,11 @@ public class TimeConstraint {
         this.endTime = endTime;
         this.endTime = startTime;
     }
+
+    TimeConstraint(TimeConstraint timeConstraint){
+        this.can = timeConstraint.can;
+        this.constraint_id = timeConstraint.constraint_id;
+        this.endTime = timeConstraint.endTime;
+        this.startTime = timeConstraint.startTime;
+    }
 }
