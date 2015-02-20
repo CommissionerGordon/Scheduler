@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SchedulerServer">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/build/Scheduler/SchedulerServer.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

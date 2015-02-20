@@ -3,17 +3,17 @@ The scheduler will be an application that allows users to view possible schedule
 
 ##How to Download
 1. Download the repository from the repository page on GitHub.
-2. Extract the contents from the zip folder. We're only going to need the "/build/Scheduler" directory.
+2. Extract the contents from the zip folder. We're only going to need the "/target" directory.
 
 ##How to Run
 ###Windows
 There are two options for Windows users.
 
-1. You can click the Run.bat file in the "/Scheduler" directory (which does the same as below).
-2. Open command prompt, navigate to the "/Scheduler" directory and type `java -jar SchedulerServer.jar`
+1. You can click the Run.bat file in the "/target" directory (which does the same as below).
+2. Open command prompt, navigate to the "/target" directory and type `java -jar SchedulerServer.jar`
 
 ###Mac/Linux
-1. Open the shell, navigate to the "/Scheduler" directory and type `java -jar SchedulerServer.jar`
+1. Open the shell, navigate to the "/target" directory and type `java -jar SchedulerServer.jar`
 
 Select which port number you want to run the server on, and click Start.
   

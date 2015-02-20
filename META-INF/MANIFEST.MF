@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: lib/ecj-4.4.jar lib/tomcat-dbcp.jar lib/tomcat-embed-core.
- jar lib/tomcat-embed-el.jar lib/tomcat-embed-jasper.jar lib/tomcat-em
- bed-logging-juli.jar lib/tomcat-embed-logging-log4j.jar lib/tomcat-em
- bed-websocket.jar
-Main-Class: com.github.commissionergordon.scheduler.main.Main
-

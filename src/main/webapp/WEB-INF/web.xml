@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!-- This is the name of the page -->
+    <display-name>Scheduler</display-name>
+
+    <!-- The "homepage" of the site -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--Maps the servlet to the class, as well as the url to the servlet -->
+    <servlet>
+        <servlet-name>DatePrintServlet</servlet-name>
+        <servlet-class>com.github.commissionergordon.scheduler.servlets.DatePrintServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DatePrintServlet</servlet-name>
+        <url-pattern>/date</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DBTestServlet</servlet-name>
+        <servlet-class>com.github.commissionergordon.scheduler.servlets.DBTestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DBTestServlet</servlet-name>
+        <url-pattern>/dbtest</url-pattern>
+    </servlet-mapping>
+</web-app>
