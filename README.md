@@ -6,8 +6,7 @@ Navigate to the release page and download the zip file!
 
 ## How to Run
 
-Double click SchedulerServer.jar. If this doesn't work for you...
-Open command prompt/shell, navigate to the "/target" directory and type `java -jar SchedulerServer.jar`
+Double click SchedulerServer.jar. If this doesn't work for you, open command prompt/shell, navigate to the unzipped directory and type `java -jar SchedulerServer.jar`
 
 Select which port number you want to run the server on, and click Start.
 
