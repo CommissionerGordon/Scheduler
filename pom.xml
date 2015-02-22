@@ -49,7 +49,28 @@
 
     <build>
         <finalName>SchedulerServer</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>db</directory>
+                <targetPath>${project.build.directory}/db</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <targetPath>${project.build.directory}/webapp</targetPath>
+            </resource>
+        </resources>
+
         <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptor>src/assembly/dep.xml</descriptor>
+                </configuration>
+            </plugin>
 
             <!-- Set a JDK compiler level -->
             <plugin>
