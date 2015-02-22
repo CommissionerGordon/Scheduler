@@ -13,8 +13,5 @@ Select which port number you want to run the server on, and click Start.
 ## How to Access
 Access the application by opening your favorite web browser and typing `localhost:<portnumber>` into the address bar, or by clicking the link [here](http://localhost:1337) and changing the port number.
 
-## !Warning!
-Make sure to hit the Stop button, and double check that you can no longer access the site before closing the window. Closing the window while the server is running **DOES NOT** stop the server.
-
 ## Comments
 This application is currently a work in progress. Anything stated in the document is subject to possible change.

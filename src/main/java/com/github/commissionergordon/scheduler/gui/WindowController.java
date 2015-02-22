@@ -64,6 +64,7 @@ public class WindowController implements Initializable {
         setServerPort(Integer.parseInt(portField.getText()));
         ServerRunnable serverRunnable = new ServerRunnable(Main.getServer());
         Thread serverThread = new Thread(serverRunnable);
+        serverThread.setDaemon(true);
         serverThread.start();
 
         try {
