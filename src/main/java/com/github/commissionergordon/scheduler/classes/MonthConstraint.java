@@ -1,11 +1,29 @@
 package com.github.commissionergordon.scheduler.classes;
 
-/**
- * Created by jusfern on 2/17/2015.
- */
+/*
+    MonthConstraint Table Schema
+
+    MONTH_CONSTRAINT_ID INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    ACTIVITY_ID         INTEGER NOT NULL,
+    CAN                 BOOLEAN NOT NULL,
+    JANUARY             BOOLEAN DEFAULT FALSE NOT NULL,
+    FEBRUARY            BOOLEAN DEFAULT FALSE NOT NULL,
+    MARCH               BOOLEAN DEFAULT FALSE NOT NULL,
+    APRIL               BOOLEAN DEFAULT FALSE NOT NULL,
+    MAY                 BOOLEAN DEFAULT FALSE NOT NULL,
+    JUNE                BOOLEAN DEFAULT FALSE NOT NULL,
+    JULY                BOOLEAN DEFAULT FALSE NOT NULL,
+    AUGUST              BOOLEAN DEFAULT FALSE NOT NULL,
+    SEPTEMBER           BOOLEAN DEFAULT FALSE NOT NULL,
+    OCTOBER             BOOLEAN DEFAULT FALSE NOT NULL,
+    NOVEMBER            BOOLEAN DEFAULT FALSE NOT NULL,
+    DECEMBER            BOOLEAN DEFAULT FALSE NOT NULL
+*/
+
 public class MonthConstraint {
-    public boolean can;
-    private int constraint_id;
+    private int id;
+    private boolean can;
+    private int activity_id;
     public boolean january;
     public boolean february;
     public boolean march;
@@ -19,25 +37,9 @@ public class MonthConstraint {
     public boolean november;
     public boolean december;
 
-    MonthConstraint(boolean can, int constraint_id){
+    public MonthConstraint(int id, int activity_id, boolean can){
+        this.id = id;
+        this.activity_id = activity_id;
         this.can = can;
-        this.constraint_id = constraint_id;
-    }
-
-    MonthConstraint(MonthConstraint monthConstraint){
-        this.can = monthConstraint.can;
-        this.constraint_id = monthConstraint.constraint_id;
-        this.january = monthConstraint.january;
-        this.february = monthConstraint.february;
-        this.march = monthConstraint.march;
-        this.april = monthConstraint.april;
-        this.may = monthConstraint.may;
-        this.june = monthConstraint.june;
-        this.july = monthConstraint.july;
-        this.august = monthConstraint.august;
-        this.september = monthConstraint.september;
-        this.october = monthConstraint.october;
-        this.november = monthConstraint.november;
-        this.december = monthConstraint.december;
     }
 }

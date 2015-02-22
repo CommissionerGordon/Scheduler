@@ -13,9 +13,13 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Server server;
+    private static final String dbConnection = "jdbc:h2:./db/scheduler";
+    private static final String dbUser = "sa";
+
     private static final String webappDir = "webapp/";
-    private static final String dbDir = "db/";
-    
+
+    //TODO: Make sure the constraint tables' constraint_id's are replaced with activity_id's
+
     public static void main(String[] args) throws IOException, LifecycleException, ServletException {
         server = new Server();
         launch(args);
@@ -37,7 +41,11 @@ public class Main extends Application {
         return webappDir;
     }
 
-    public static String getDbDir() {
-        return dbDir;
+    public static String getDBConnectionString() {
+        return dbConnection;
+    }
+
+    public static String getDbUser() {
+        return dbUser;
     }
 }

@@ -2,26 +2,28 @@ package com.github.commissionergordon.scheduler.classes;
 
 import java.util.Date;
 
-/**
- * Created by jusfern on 2/17/2015.
- */
+/*
+    TimeConstraint Table Schema
+
+    TIME_CONSTRAINT_ID INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    ACTIVITY_ID        INTEGER NOT NULL,
+    CAN                BOOLEAN,
+    STARTTIME          TIME,
+    ENDTIME            TIME
+*/
+
 public class TimeConstraint {
-    public boolean can;
-    private int constraint_id;
-    private Date endTime;
+    private int id;
+    private int activity_id;
+    private boolean can;
     private Date startTime;
+    private Date endTime;
 
-    TimeConstraint(boolean can, int constraint_id, Date endTime, Date startTime){
+    public TimeConstraint(int id, int activity_id, boolean can, Date startTime, Date endTime){
+        this.id = id;
+        this.activity_id = activity_id;
         this.can = can;
-        this.constraint_id = constraint_id;
+        this.startTime = startTime;
         this.endTime = endTime;
-        this.endTime = startTime;
-    }
-
-    TimeConstraint(TimeConstraint timeConstraint){
-        this.can = timeConstraint.can;
-        this.constraint_id = timeConstraint.constraint_id;
-        this.endTime = timeConstraint.endTime;
-        this.startTime = timeConstraint.startTime;
     }
 }

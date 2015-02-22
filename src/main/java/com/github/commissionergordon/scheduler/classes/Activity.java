@@ -1,50 +1,50 @@
 package com.github.commissionergordon.scheduler.classes;
 
+import com.github.commissionergordon.scheduler.interfaces.Constraint;
+import com.github.commissionergordon.scheduler.interfaces.SQLObject;
+
+import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-/**
- * Created by jusfern on 2/17/2015.
- */
-public class Activity {
-    private float duration;
-    private boolean enabled;
+/*
+    Activity Table Schema
+
+    ACTIVITY_ID        INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    USER_ID            INTEGER NOT NULL,
+    ACTIVITY_NAME      VARCHAR(30) NOT NULL,
+    ACTIVITY_DURATION  TIMESTAMP NOT NULL,
+    ACTIVITY_ENABLED   BOOLEAN DEFAULT TRUE NOT NULL,
+    ACTIVITY_STARTTIME TIME,
+    ACTIVITY_PRIORITY  INTEGER DEFAULT 0 NOT NULL
+*/
+
+public class Activity implements SQLObject {
     private int id;
-    private String name;
-    private int parts;
-    private int priority;
-    private Date startTime;
     private int user_id;
+    private String name;
+    private Date duration;
+    private boolean enabled;
+    private Time startTime;
+    private int priority;
 
-    public Activity(float duration, int id, String name, int user_id){
-        this.duration = duration;
+    private List<Constraint> constraints;
+
+    public Activity(int id, int user_id, String name, Date duration, boolean enabled, Time startTime, int priority){
         this.id = id;
-        this.name = name;
         this.user_id = user_id;
-
-        this.enabled = false;
-        this.parts = 1;
-        this.priority = 0;
-    }
-
-    public Activity(Activity activity){
-        this.duration = activity.duration;
-        this.enabled = activity.enabled;
-        this.id = activity.id;
-        this.name = activity.name;
-        this.parts = activity.parts;
-        this.priority = activity.priority;
-        this.startTime = activity.startTime;
-        this.user_id = activity.user_id;
-    }
-
-    public Activity(float duration, boolean enabled, int id, String name, int parts, int priority, Date startTime, int user_id){
+        this.name = name;
         this.duration = duration;
         this.enabled = enabled;
-        this.id = id;
-        this.name = name;
-        this.parts = parts;
-        this.priority = priority;
         this.startTime = startTime;
-        this.user_id = user_id;
+        this.priority = priority;
+
+        constraints = new ArrayList<Constraint>();
+    }
+
+    @Override
+    public String getUpdateString() {
+        return null;
     }
 }
