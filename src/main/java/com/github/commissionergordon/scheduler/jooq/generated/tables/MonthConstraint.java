@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class MonthConstraint extends org.jooq.impl.TableImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord> {
 
-	private static final long serialVersionUID = -936432269;
+	private static final long serialVersionUID = 289445974;
 
 	/**
 	 * The reference instance of <code>PUBLIC.MONTH_CONSTRAINT</code>
@@ -37,9 +37,9 @@ public class MonthConstraint extends org.jooq.impl.TableImpl<com.github.commissi
 	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Integer> MONTH_CONSTRAINT_ID = createField("MONTH_CONSTRAINT_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaulted(true), this, "");
 
 	/**
-	 * The column <code>PUBLIC.MONTH_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * The column <code>PUBLIC.MONTH_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Integer> CONSTRAINT_ID = createField("CONSTRAINT_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Integer> ACTIVITY_ID = createField("ACTIVITY_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.CAN</code>.
@@ -49,62 +49,62 @@ public class MonthConstraint extends org.jooq.impl.TableImpl<com.github.commissi
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.JANUARY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> JANUARY = createField("JANUARY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> JANUARY = createField("JANUARY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
-	 * The column <code>PUBLIC.MONTH_CONSTRAINT.FEBRUARY</code>.
+	 * The column <code>PUBLIC.MONTH_CONSTRAINT.FEBRAURY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> FEBRUARY = createField("FEBRUARY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> FEBRAURY = createField("FEBRAURY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.MARCH</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> MARCH = createField("MARCH", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> MARCH = createField("MARCH", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.APRIL</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> APRIL = createField("APRIL", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> APRIL = createField("APRIL", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.MAY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> MAY = createField("MAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> MAY = createField("MAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.JUNE</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> JUNE = createField("JUNE", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> JUNE = createField("JUNE", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.JULY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> JULY = createField("JULY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> JULY = createField("JULY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.AUGUST</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> AUGUST = createField("AUGUST", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> AUGUST = createField("AUGUST", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.SEPTEMBER</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> SEPTEMBER = createField("SEPTEMBER", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> SEPTEMBER = createField("SEPTEMBER", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.OCTOBER</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> OCTOBER = createField("OCTOBER", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> OCTOBER = createField("OCTOBER", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.NOVEMBER</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> NOVEMBER = createField("NOVEMBER", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> NOVEMBER = createField("NOVEMBER", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.MONTH_CONSTRAINT.DECEMBER</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> DECEMBER = createField("DECEMBER", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, java.lang.Boolean> DECEMBER = createField("DECEMBER", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * Create a <code>PUBLIC.MONTH_CONSTRAINT</code> table reference
@@ -150,6 +150,14 @@ public class MonthConstraint extends org.jooq.impl.TableImpl<com.github.commissi
 	@Override
 	public java.util.List<org.jooq.UniqueKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord>> getKeys() {
 		return java.util.Arrays.<org.jooq.UniqueKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord>>asList(com.github.commissionergordon.scheduler.jooq.generated.Keys.CONSTRAINT_24);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public java.util.List<org.jooq.ForeignKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, ?>> getReferences() {
+		return java.util.Arrays.<org.jooq.ForeignKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord, ?>>asList(com.github.commissionergordon.scheduler.jooq.generated.Keys.CONSTRAINT_248);
 	}
 
 	/**

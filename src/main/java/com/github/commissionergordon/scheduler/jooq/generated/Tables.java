@@ -32,9 +32,9 @@ public class Tables {
 	public static final com.github.commissionergordon.scheduler.jooq.generated.tables.WeekdayConstraint WEEKDAY_CONSTRAINT = com.github.commissionergordon.scheduler.jooq.generated.tables.WeekdayConstraint.WEEKDAY_CONSTRAINT;
 
 	/**
-	 * The table PUBLIC.TIME_CONSTRAINT
+	 * The table PUBLIC.MONTH_CONSTRAINT
 	 */
-	public static final com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint TIME_CONSTRAINT = com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint.TIME_CONSTRAINT;
+	public static final com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint MONTH_CONSTRAINT = com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT;
 
 	/**
 	 * The table PUBLIC.DATE_CONSTRAINT
@@ -42,7 +42,7 @@ public class Tables {
 	public static final com.github.commissionergordon.scheduler.jooq.generated.tables.DateConstraint DATE_CONSTRAINT = com.github.commissionergordon.scheduler.jooq.generated.tables.DateConstraint.DATE_CONSTRAINT;
 
 	/**
-	 * The table PUBLIC.MONTH_CONSTRAINT
+	 * The table PUBLIC.TIME_CONSTRAINT
 	 */
-	public static final com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint MONTH_CONSTRAINT = com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT;
+	public static final com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint TIME_CONSTRAINT = com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint.TIME_CONSTRAINT;
 }

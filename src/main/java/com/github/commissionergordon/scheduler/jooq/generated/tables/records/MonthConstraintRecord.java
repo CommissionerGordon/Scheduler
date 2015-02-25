@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables.records;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.MonthConstraintRecord> implements org.jooq.Record15<java.lang.Integer, java.lang.Integer, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean> {
 
-	private static final long serialVersionUID = 2031293420;
+	private static final long serialVersionUID = 295751806;
 
 	/**
 	 * Setter for <code>PUBLIC.MONTH_CONSTRAINT.MONTH_CONSTRAINT_ID</code>.
@@ -33,16 +33,16 @@ public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.MONTH_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * Setter for <code>PUBLIC.MONTH_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public void setConstraintId(java.lang.Integer value) {
+	public void setActivityId(java.lang.Integer value) {
 		setValue(1, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.MONTH_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * Getter for <code>PUBLIC.MONTH_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public java.lang.Integer getConstraintId() {
+	public java.lang.Integer getActivityId() {
 		return (java.lang.Integer) getValue(1);
 	}
 
@@ -75,16 +75,16 @@ public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.MONTH_CONSTRAINT.FEBRUARY</code>.
+	 * Setter for <code>PUBLIC.MONTH_CONSTRAINT.FEBRAURY</code>.
 	 */
-	public void setFebruary(java.lang.Boolean value) {
+	public void setFebraury(java.lang.Boolean value) {
 		setValue(4, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.MONTH_CONSTRAINT.FEBRUARY</code>.
+	 * Getter for <code>PUBLIC.MONTH_CONSTRAINT.FEBRAURY</code>.
 	 */
-	public java.lang.Boolean getFebruary() {
+	public java.lang.Boolean getFebraury() {
 		return (java.lang.Boolean) getValue(4);
 	}
 
@@ -273,7 +273,7 @@ public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com
 	 */
 	@Override
 	public org.jooq.Field<java.lang.Integer> field2() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT.CONSTRAINT_ID;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT.ACTIVITY_ID;
 	}
 
 	/**
@@ -297,7 +297,7 @@ public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com
 	 */
 	@Override
 	public org.jooq.Field<java.lang.Boolean> field5() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT.FEBRUARY;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT.FEBRAURY;
 	}
 
 	/**
@@ -393,7 +393,7 @@ public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com
 	 */
 	@Override
 	public java.lang.Integer value2() {
-		return getConstraintId();
+		return getActivityId();
 	}
 
 	/**
@@ -417,7 +417,7 @@ public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com
 	 */
 	@Override
 	public java.lang.Boolean value5() {
-		return getFebruary();
+		return getFebraury();
 	}
 
 	/**
@@ -514,7 +514,7 @@ public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com
 	 */
 	@Override
 	public MonthConstraintRecord value2(java.lang.Integer value) {
-		setConstraintId(value);
+		setActivityId(value);
 		return this;
 	}
 
@@ -541,7 +541,7 @@ public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com
 	 */
 	@Override
 	public MonthConstraintRecord value5(java.lang.Boolean value) {
-		setFebruary(value);
+		setFebraury(value);
 		return this;
 	}
 
@@ -657,14 +657,14 @@ public class MonthConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com
 	/**
 	 * Create a detached, initialised MonthConstraintRecord
 	 */
-	public MonthConstraintRecord(java.lang.Integer monthConstraintId, java.lang.Integer constraintId, java.lang.Boolean can, java.lang.Boolean january, java.lang.Boolean february, java.lang.Boolean march, java.lang.Boolean april, java.lang.Boolean may, java.lang.Boolean june, java.lang.Boolean july, java.lang.Boolean august, java.lang.Boolean september, java.lang.Boolean october, java.lang.Boolean november, java.lang.Boolean december) {
+	public MonthConstraintRecord(java.lang.Integer monthConstraintId, java.lang.Integer activityId, java.lang.Boolean can, java.lang.Boolean january, java.lang.Boolean febraury, java.lang.Boolean march, java.lang.Boolean april, java.lang.Boolean may, java.lang.Boolean june, java.lang.Boolean july, java.lang.Boolean august, java.lang.Boolean september, java.lang.Boolean october, java.lang.Boolean november, java.lang.Boolean december) {
 		super(com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT);
 
 		setValue(0, monthConstraintId);
-		setValue(1, constraintId);
+		setValue(1, activityId);
 		setValue(2, can);
 		setValue(3, january);
-		setValue(4, february);
+		setValue(4, febraury);
 		setValue(5, march);
 		setValue(6, april);
 		setValue(7, may);

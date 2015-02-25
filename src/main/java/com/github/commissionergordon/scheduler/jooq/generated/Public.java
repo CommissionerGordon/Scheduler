@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends org.jooq.impl.SchemaImpl {
 
-	private static final long serialVersionUID = 628638905;
+	private static final long serialVersionUID = 863042232;
 
 	/**
 	 * The reference instance of <code>PUBLIC</code>
@@ -39,12 +39,12 @@ public class Public extends org.jooq.impl.SchemaImpl {
 
 	private final java.util.List<org.jooq.Sequence<?>> getSequences0() {
 		return java.util.Arrays.<org.jooq.Sequence<?>>asList(
+			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_3643CDD3_4243_4A10_9864_95D75CC8A92D,
+			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_43C71C39_56F9_46AA_927F_0C4A982451E3,
+			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_6E1595B5_C8CB_44A8_94C3_A227DAF59593,
 			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_9F0C3D1C_886F_416E_A355_2F83EF6D537F,
-			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_AFFE6821_6700_4363_A2FD_06D5065C239F,
-			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_B5F66E92_F9B0_42EB_B6FA_15867179A821,
-			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_CBA86AE3_A601_4313_861A_8FC1C09AF089,
-			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_DD968D6F_5DA7_4086_ABE8_BE367BFF5D77,
-			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_EDC4413E_7371_47D6_931A_28807F074665);
+			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_CD991F7F_D5E3_4B09_8D0F_766FF93B5971,
+			com.github.commissionergordon.scheduler.jooq.generated.Sequences.SYSTEM_SEQUENCE_FEBFEB96_C410_48C8_A917_DF1295E0C678);
 	}
 
 	@Override
@@ -59,8 +59,8 @@ public class Public extends org.jooq.impl.SchemaImpl {
 			com.github.commissionergordon.scheduler.jooq.generated.tables.User.USER,
 			com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY,
 			com.github.commissionergordon.scheduler.jooq.generated.tables.WeekdayConstraint.WEEKDAY_CONSTRAINT,
-			com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint.TIME_CONSTRAINT,
+			com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT,
 			com.github.commissionergordon.scheduler.jooq.generated.tables.DateConstraint.DATE_CONSTRAINT,
-			com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT);
+			com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint.TIME_CONSTRAINT);
 	}
 }

@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables.records;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class DateConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.DateConstraintRecord> implements org.jooq.Record3<java.lang.Integer, java.lang.Integer, java.sql.Date> {
 
-	private static final long serialVersionUID = 2107222488;
+	private static final long serialVersionUID = 2065395138;
 
 	/**
 	 * Setter for <code>PUBLIC.DATE_CONSTRAINT.DATE_CONSTRAINT_ID</code>.
@@ -33,16 +33,16 @@ public class DateConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.DATE_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * Setter for <code>PUBLIC.DATE_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public void setConstraintId(java.lang.Integer value) {
+	public void setActivityId(java.lang.Integer value) {
 		setValue(1, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.DATE_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * Getter for <code>PUBLIC.DATE_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public java.lang.Integer getConstraintId() {
+	public java.lang.Integer getActivityId() {
 		return (java.lang.Integer) getValue(1);
 	}
 
@@ -105,7 +105,7 @@ public class DateConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	 */
 	@Override
 	public org.jooq.Field<java.lang.Integer> field2() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.DateConstraint.DATE_CONSTRAINT.CONSTRAINT_ID;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.DateConstraint.DATE_CONSTRAINT.ACTIVITY_ID;
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class DateConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	 */
 	@Override
 	public java.lang.Integer value2() {
-		return getConstraintId();
+		return getActivityId();
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class DateConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	 */
 	@Override
 	public DateConstraintRecord value2(java.lang.Integer value) {
-		setConstraintId(value);
+		setActivityId(value);
 		return this;
 	}
 
@@ -189,11 +189,11 @@ public class DateConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	/**
 	 * Create a detached, initialised DateConstraintRecord
 	 */
-	public DateConstraintRecord(java.lang.Integer dateConstraintId, java.lang.Integer constraintId, java.sql.Date date) {
+	public DateConstraintRecord(java.lang.Integer dateConstraintId, java.lang.Integer activityId, java.sql.Date date) {
 		super(com.github.commissionergordon.scheduler.jooq.generated.tables.DateConstraint.DATE_CONSTRAINT);
 
 		setValue(0, dateConstraintId);
-		setValue(1, constraintId);
+		setValue(1, activityId);
 		setValue(2, date);
 	}
 }

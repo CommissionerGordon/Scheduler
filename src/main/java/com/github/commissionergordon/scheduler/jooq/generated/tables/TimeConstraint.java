@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TimeConstraint extends org.jooq.impl.TableImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.TimeConstraintRecord> {
 
-	private static final long serialVersionUID = 1559459145;
+	private static final long serialVersionUID = -276866086;
 
 	/**
 	 * The reference instance of <code>PUBLIC.TIME_CONSTRAINT</code>
@@ -37,9 +37,9 @@ public class TimeConstraint extends org.jooq.impl.TableImpl<com.github.commissio
 	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.TimeConstraintRecord, java.lang.Integer> TIME_CONSTRAINT_ID = createField("TIME_CONSTRAINT_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaulted(true), this, "");
 
 	/**
-	 * The column <code>PUBLIC.TIME_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * The column <code>PUBLIC.TIME_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.TimeConstraintRecord, java.lang.Integer> CONSTRAINT_ID = createField("CONSTRAINT_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.TimeConstraintRecord, java.lang.Integer> ACTIVITY_ID = createField("ACTIVITY_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.TIME_CONSTRAINT.CAN</code>.
@@ -100,6 +100,14 @@ public class TimeConstraint extends org.jooq.impl.TableImpl<com.github.commissio
 	@Override
 	public java.util.List<org.jooq.UniqueKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.TimeConstraintRecord>> getKeys() {
 		return java.util.Arrays.<org.jooq.UniqueKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.TimeConstraintRecord>>asList(com.github.commissionergordon.scheduler.jooq.generated.Keys.CONSTRAINT_6);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public java.util.List<org.jooq.ForeignKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.TimeConstraintRecord, ?>> getReferences() {
+		return java.util.Arrays.<org.jooq.ForeignKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.TimeConstraintRecord, ?>>asList(com.github.commissionergordon.scheduler.jooq.generated.Keys.CONSTRAINT_6F);
 	}
 
 	/**

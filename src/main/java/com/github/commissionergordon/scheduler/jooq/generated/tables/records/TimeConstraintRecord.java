@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables.records;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TimeConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.TimeConstraintRecord> implements org.jooq.Record5<java.lang.Integer, java.lang.Integer, java.lang.Boolean, java.sql.Time, java.sql.Time> {
 
-	private static final long serialVersionUID = 1337212381;
+	private static final long serialVersionUID = -1358118989;
 
 	/**
 	 * Setter for <code>PUBLIC.TIME_CONSTRAINT.TIME_CONSTRAINT_ID</code>.
@@ -33,16 +33,16 @@ public class TimeConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.TIME_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * Setter for <code>PUBLIC.TIME_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public void setConstraintId(java.lang.Integer value) {
+	public void setActivityId(java.lang.Integer value) {
 		setValue(1, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.TIME_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * Getter for <code>PUBLIC.TIME_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public java.lang.Integer getConstraintId() {
+	public java.lang.Integer getActivityId() {
 		return (java.lang.Integer) getValue(1);
 	}
 
@@ -133,7 +133,7 @@ public class TimeConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	 */
 	@Override
 	public org.jooq.Field<java.lang.Integer> field2() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint.TIME_CONSTRAINT.CONSTRAINT_ID;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint.TIME_CONSTRAINT.ACTIVITY_ID;
 	}
 
 	/**
@@ -173,7 +173,7 @@ public class TimeConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	 */
 	@Override
 	public java.lang.Integer value2() {
-		return getConstraintId();
+		return getActivityId();
 	}
 
 	/**
@@ -214,7 +214,7 @@ public class TimeConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	 */
 	@Override
 	public TimeConstraintRecord value2(java.lang.Integer value) {
-		setConstraintId(value);
+		setActivityId(value);
 		return this;
 	}
 
@@ -267,11 +267,11 @@ public class TimeConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.
 	/**
 	 * Create a detached, initialised TimeConstraintRecord
 	 */
-	public TimeConstraintRecord(java.lang.Integer timeConstraintId, java.lang.Integer constraintId, java.lang.Boolean can, java.sql.Time starttime, java.sql.Time endtime) {
+	public TimeConstraintRecord(java.lang.Integer timeConstraintId, java.lang.Integer activityId, java.lang.Boolean can, java.sql.Time starttime, java.sql.Time endtime) {
 		super(com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint.TIME_CONSTRAINT);
 
 		setValue(0, timeConstraintId);
-		setValue(1, constraintId);
+		setValue(1, activityId);
 		setValue(2, can);
 		setValue(3, starttime);
 		setValue(4, endtime);

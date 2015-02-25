@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Activity extends org.jooq.impl.TableImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord> {
 
-	private static final long serialVersionUID = -1376388897;
+	private static final long serialVersionUID = 1750975127;
 
 	/**
 	 * The reference instance of <code>PUBLIC.ACTIVITY</code>
@@ -42,29 +42,29 @@ public class Activity extends org.jooq.impl.TableImpl<com.github.commissionergor
 	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.lang.Integer> USER_ID = createField("USER_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>PUBLIC.ACTIVITY.ACTIVITY_NAME</code>.
+	 * The column <code>PUBLIC.ACTIVITY.NAME</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.lang.String> ACTIVITY_NAME = createField("ACTIVITY_NAME", org.jooq.impl.SQLDataType.VARCHAR.length(30).nullable(false), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.lang.String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR.length(30).nullable(false), this, "");
 
 	/**
-	 * The column <code>PUBLIC.ACTIVITY.ACTIVITY_DURATION</code>.
+	 * The column <code>PUBLIC.ACTIVITY.DURATION</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.sql.Timestamp> ACTIVITY_DURATION = createField("ACTIVITY_DURATION", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.sql.Timestamp> DURATION = createField("DURATION", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false), this, "");
 
 	/**
-	 * The column <code>PUBLIC.ACTIVITY.ACTIVITY_ENABLED</code>.
+	 * The column <code>PUBLIC.ACTIVITY.ENABLED</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.lang.Boolean> ACTIVITY_ENABLED = createField("ACTIVITY_ENABLED", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.lang.Boolean> ENABLED = createField("ENABLED", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
-	 * The column <code>PUBLIC.ACTIVITY.ACTIVITY_STARTTIME</code>.
+	 * The column <code>PUBLIC.ACTIVITY.STARTTIME</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.sql.Time> ACTIVITY_STARTTIME = createField("ACTIVITY_STARTTIME", org.jooq.impl.SQLDataType.TIME, this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.sql.Time> STARTTIME = createField("STARTTIME", org.jooq.impl.SQLDataType.TIME, this, "");
 
 	/**
-	 * The column <code>PUBLIC.ACTIVITY.ACTIVITY_PRIORITY</code>.
+	 * The column <code>PUBLIC.ACTIVITY.PRIORITY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.lang.Integer> ACTIVITY_PRIORITY = createField("ACTIVITY_PRIORITY", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.lang.Integer> PRIORITY = createField("PRIORITY", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
 	 * Create a <code>PUBLIC.ACTIVITY</code> table reference

@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class WeekdayConstraint extends org.jooq.impl.TableImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord> {
 
-	private static final long serialVersionUID = 2027598451;
+	private static final long serialVersionUID = 137597188;
 
 	/**
 	 * The reference instance of <code>PUBLIC.WEEKDAY_CONSTRAINT</code>
@@ -37,9 +37,9 @@ public class WeekdayConstraint extends org.jooq.impl.TableImpl<com.github.commis
 	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Integer> WEEKDAY_CONSTRAINT_ID = createField("WEEKDAY_CONSTRAINT_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaulted(true), this, "");
 
 	/**
-	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Integer> CONSTRAINT_ID = createField("CONSTRAINT_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Integer> ACTIVITY_ID = createField("ACTIVITY_ID", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.CAN</code>.
@@ -49,37 +49,37 @@ public class WeekdayConstraint extends org.jooq.impl.TableImpl<com.github.commis
 	/**
 	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.SUNDAY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> SUNDAY = createField("SUNDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> SUNDAY = createField("SUNDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.MONDAY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> MONDAY = createField("MONDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> MONDAY = createField("MONDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.TUESDAY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> TUESDAY = createField("TUESDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> TUESDAY = createField("TUESDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.WEDNESDAY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> WEDNESDAY = createField("WEDNESDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> WEDNESDAY = createField("WEDNESDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.THURSDAY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> THURSDAY = createField("THURSDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> THURSDAY = createField("THURSDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.FRIDAY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> FRIDAY = createField("FRIDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> FRIDAY = createField("FRIDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.WEEKDAY_CONSTRAINT.SATURDAY</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> SATURDAY = createField("SATURDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaulted(true), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, java.lang.Boolean> SATURDAY = createField("SATURDAY", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * Create a <code>PUBLIC.WEEKDAY_CONSTRAINT</code> table reference
@@ -125,6 +125,14 @@ public class WeekdayConstraint extends org.jooq.impl.TableImpl<com.github.commis
 	@Override
 	public java.util.List<org.jooq.UniqueKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord>> getKeys() {
 		return java.util.Arrays.<org.jooq.UniqueKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord>>asList(com.github.commissionergordon.scheduler.jooq.generated.Keys.CONSTRAINT_3);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public java.util.List<org.jooq.ForeignKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, ?>> getReferences() {
+		return java.util.Arrays.<org.jooq.ForeignKey<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord, ?>>asList(com.github.commissionergordon.scheduler.jooq.generated.Keys.CONSTRAINT_38);
 	}
 
 	/**

@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables.records;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord> implements org.jooq.Record7<java.lang.Integer, java.lang.Integer, java.lang.String, java.sql.Timestamp, java.lang.Boolean, java.sql.Time, java.lang.Integer> {
 
-	private static final long serialVersionUID = 1272674619;
+	private static final long serialVersionUID = -864653917;
 
 	/**
 	 * Setter for <code>PUBLIC.ACTIVITY.ACTIVITY_ID</code>.
@@ -47,72 +47,72 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.ACTIVITY.ACTIVITY_NAME</code>.
+	 * Setter for <code>PUBLIC.ACTIVITY.NAME</code>.
 	 */
-	public void setActivityName(java.lang.String value) {
+	public void setName(java.lang.String value) {
 		setValue(2, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.ACTIVITY.ACTIVITY_NAME</code>.
+	 * Getter for <code>PUBLIC.ACTIVITY.NAME</code>.
 	 */
-	public java.lang.String getActivityName() {
+	public java.lang.String getName() {
 		return (java.lang.String) getValue(2);
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.ACTIVITY.ACTIVITY_DURATION</code>.
+	 * Setter for <code>PUBLIC.ACTIVITY.DURATION</code>.
 	 */
-	public void setActivityDuration(java.sql.Timestamp value) {
+	public void setDuration(java.sql.Timestamp value) {
 		setValue(3, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.ACTIVITY.ACTIVITY_DURATION</code>.
+	 * Getter for <code>PUBLIC.ACTIVITY.DURATION</code>.
 	 */
-	public java.sql.Timestamp getActivityDuration() {
+	public java.sql.Timestamp getDuration() {
 		return (java.sql.Timestamp) getValue(3);
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.ACTIVITY.ACTIVITY_ENABLED</code>.
+	 * Setter for <code>PUBLIC.ACTIVITY.ENABLED</code>.
 	 */
-	public void setActivityEnabled(java.lang.Boolean value) {
+	public void setEnabled(java.lang.Boolean value) {
 		setValue(4, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.ACTIVITY.ACTIVITY_ENABLED</code>.
+	 * Getter for <code>PUBLIC.ACTIVITY.ENABLED</code>.
 	 */
-	public java.lang.Boolean getActivityEnabled() {
+	public java.lang.Boolean getEnabled() {
 		return (java.lang.Boolean) getValue(4);
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.ACTIVITY.ACTIVITY_STARTTIME</code>.
+	 * Setter for <code>PUBLIC.ACTIVITY.STARTTIME</code>.
 	 */
-	public void setActivityStarttime(java.sql.Time value) {
+	public void setStarttime(java.sql.Time value) {
 		setValue(5, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.ACTIVITY.ACTIVITY_STARTTIME</code>.
+	 * Getter for <code>PUBLIC.ACTIVITY.STARTTIME</code>.
 	 */
-	public java.sql.Time getActivityStarttime() {
+	public java.sql.Time getStarttime() {
 		return (java.sql.Time) getValue(5);
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.ACTIVITY.ACTIVITY_PRIORITY</code>.
+	 * Setter for <code>PUBLIC.ACTIVITY.PRIORITY</code>.
 	 */
-	public void setActivityPriority(java.lang.Integer value) {
+	public void setPriority(java.lang.Integer value) {
 		setValue(6, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.ACTIVITY.ACTIVITY_PRIORITY</code>.
+	 * Getter for <code>PUBLIC.ACTIVITY.PRIORITY</code>.
 	 */
-	public java.lang.Integer getActivityPriority() {
+	public java.lang.Integer getPriority() {
 		return (java.lang.Integer) getValue(6);
 	}
 
@@ -169,7 +169,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public org.jooq.Field<java.lang.String> field3() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.ACTIVITY_NAME;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.NAME;
 	}
 
 	/**
@@ -177,7 +177,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public org.jooq.Field<java.sql.Timestamp> field4() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.ACTIVITY_DURATION;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.DURATION;
 	}
 
 	/**
@@ -185,7 +185,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public org.jooq.Field<java.lang.Boolean> field5() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.ACTIVITY_ENABLED;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.ENABLED;
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public org.jooq.Field<java.sql.Time> field6() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.ACTIVITY_STARTTIME;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.STARTTIME;
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public org.jooq.Field<java.lang.Integer> field7() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.ACTIVITY_PRIORITY;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY.PRIORITY;
 	}
 
 	/**
@@ -225,7 +225,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public java.lang.String value3() {
-		return getActivityName();
+		return getName();
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public java.sql.Timestamp value4() {
-		return getActivityDuration();
+		return getDuration();
 	}
 
 	/**
@@ -241,7 +241,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public java.lang.Boolean value5() {
-		return getActivityEnabled();
+		return getEnabled();
 	}
 
 	/**
@@ -249,7 +249,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public java.sql.Time value6() {
-		return getActivityStarttime();
+		return getStarttime();
 	}
 
 	/**
@@ -257,7 +257,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public java.lang.Integer value7() {
-		return getActivityPriority();
+		return getPriority();
 	}
 
 	/**
@@ -283,7 +283,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public ActivityRecord value3(java.lang.String value) {
-		setActivityName(value);
+		setName(value);
 		return this;
 	}
 
@@ -292,7 +292,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public ActivityRecord value4(java.sql.Timestamp value) {
-		setActivityDuration(value);
+		setDuration(value);
 		return this;
 	}
 
@@ -301,7 +301,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public ActivityRecord value5(java.lang.Boolean value) {
-		setActivityEnabled(value);
+		setEnabled(value);
 		return this;
 	}
 
@@ -310,7 +310,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public ActivityRecord value6(java.sql.Time value) {
-		setActivityStarttime(value);
+		setStarttime(value);
 		return this;
 	}
 
@@ -319,7 +319,7 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	 */
 	@Override
 	public ActivityRecord value7(java.lang.Integer value) {
-		setActivityPriority(value);
+		setPriority(value);
 		return this;
 	}
 
@@ -345,15 +345,15 @@ public class ActivityRecord extends org.jooq.impl.UpdatableRecordImpl<com.github
 	/**
 	 * Create a detached, initialised ActivityRecord
 	 */
-	public ActivityRecord(java.lang.Integer activityId, java.lang.Integer userId, java.lang.String activityName, java.sql.Timestamp activityDuration, java.lang.Boolean activityEnabled, java.sql.Time activityStarttime, java.lang.Integer activityPriority) {
+	public ActivityRecord(java.lang.Integer activityId, java.lang.Integer userId, java.lang.String name, java.sql.Timestamp duration, java.lang.Boolean enabled, java.sql.Time starttime, java.lang.Integer priority) {
 		super(com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY);
 
 		setValue(0, activityId);
 		setValue(1, userId);
-		setValue(2, activityName);
-		setValue(3, activityDuration);
-		setValue(4, activityEnabled);
-		setValue(5, activityStarttime);
-		setValue(6, activityPriority);
+		setValue(2, name);
+		setValue(3, duration);
+		setValue(4, enabled);
+		setValue(5, starttime);
+		setValue(6, priority);
 	}
 }

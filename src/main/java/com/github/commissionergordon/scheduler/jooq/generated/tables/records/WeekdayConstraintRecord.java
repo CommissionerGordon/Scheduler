@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables.records;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class WeekdayConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.WeekdayConstraintRecord> implements org.jooq.Record10<java.lang.Integer, java.lang.Integer, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean> {
 
-	private static final long serialVersionUID = 1453140918;
+	private static final long serialVersionUID = -1620143100;
 
 	/**
 	 * Setter for <code>PUBLIC.WEEKDAY_CONSTRAINT.WEEKDAY_CONSTRAINT_ID</code>.
@@ -33,16 +33,16 @@ public class WeekdayConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<c
 	}
 
 	/**
-	 * Setter for <code>PUBLIC.WEEKDAY_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * Setter for <code>PUBLIC.WEEKDAY_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public void setConstraintId(java.lang.Integer value) {
+	public void setActivityId(java.lang.Integer value) {
 		setValue(1, value);
 	}
 
 	/**
-	 * Getter for <code>PUBLIC.WEEKDAY_CONSTRAINT.CONSTRAINT_ID</code>.
+	 * Getter for <code>PUBLIC.WEEKDAY_CONSTRAINT.ACTIVITY_ID</code>.
 	 */
-	public java.lang.Integer getConstraintId() {
+	public java.lang.Integer getActivityId() {
 		return (java.lang.Integer) getValue(1);
 	}
 
@@ -203,7 +203,7 @@ public class WeekdayConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<c
 	 */
 	@Override
 	public org.jooq.Field<java.lang.Integer> field2() {
-		return com.github.commissionergordon.scheduler.jooq.generated.tables.WeekdayConstraint.WEEKDAY_CONSTRAINT.CONSTRAINT_ID;
+		return com.github.commissionergordon.scheduler.jooq.generated.tables.WeekdayConstraint.WEEKDAY_CONSTRAINT.ACTIVITY_ID;
 	}
 
 	/**
@@ -283,7 +283,7 @@ public class WeekdayConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<c
 	 */
 	@Override
 	public java.lang.Integer value2() {
-		return getConstraintId();
+		return getActivityId();
 	}
 
 	/**
@@ -364,7 +364,7 @@ public class WeekdayConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<c
 	 */
 	@Override
 	public WeekdayConstraintRecord value2(java.lang.Integer value) {
-		setConstraintId(value);
+		setActivityId(value);
 		return this;
 	}
 
@@ -462,11 +462,11 @@ public class WeekdayConstraintRecord extends org.jooq.impl.UpdatableRecordImpl<c
 	/**
 	 * Create a detached, initialised WeekdayConstraintRecord
 	 */
-	public WeekdayConstraintRecord(java.lang.Integer weekdayConstraintId, java.lang.Integer constraintId, java.lang.Boolean can, java.lang.Boolean sunday, java.lang.Boolean monday, java.lang.Boolean tuesday, java.lang.Boolean wednesday, java.lang.Boolean thursday, java.lang.Boolean friday, java.lang.Boolean saturday) {
+	public WeekdayConstraintRecord(java.lang.Integer weekdayConstraintId, java.lang.Integer activityId, java.lang.Boolean can, java.lang.Boolean sunday, java.lang.Boolean monday, java.lang.Boolean tuesday, java.lang.Boolean wednesday, java.lang.Boolean thursday, java.lang.Boolean friday, java.lang.Boolean saturday) {
 		super(com.github.commissionergordon.scheduler.jooq.generated.tables.WeekdayConstraint.WEEKDAY_CONSTRAINT);
 
 		setValue(0, weekdayConstraintId);
-		setValue(1, constraintId);
+		setValue(1, activityId);
 		setValue(2, can);
 		setValue(3, sunday);
 		setValue(4, monday);
