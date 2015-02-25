@@ -4,6 +4,7 @@ import com.github.commissionergordon.scheduler.interfaces.Constraint;
 import com.github.commissionergordon.scheduler.interfaces.SQLObject;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,27 +12,27 @@ import java.util.List;
 /*
     Activity Table Schema
 
-    ACTIVITY_ID        INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    USER_ID            INTEGER NOT NULL,
-    ACTIVITY_NAME      VARCHAR(30) NOT NULL,
-    ACTIVITY_DURATION  TIMESTAMP NOT NULL,
-    ACTIVITY_ENABLED   BOOLEAN DEFAULT TRUE NOT NULL,
-    ACTIVITY_STARTTIME TIME,
-    ACTIVITY_PRIORITY  INTEGER DEFAULT 0 NOT NULL
+    ACTIVITY_ID INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    USER_ID     INTEGER NOT NULL,
+    NAME        VARCHAR(30) NOT NULL,
+    DURATION    TIMESTAMP NOT NULL,
+    ENABLED     BOOLEAN DEFAULT TRUE NOT NULL,
+    STARTTIME   TIME,
+    PRIORITY    INTEGER DEFAULT 0 NOT NULL
 */
 
 public class Activity implements SQLObject {
-    private int id;
-    private int user_id;
-    private String name;
-    private Date duration;
-    private boolean enabled;
-    private Time startTime;
-    private int priority;
+    public int id;
+    public int user_id;
+    public String name;
+    public LocalTime duration;
+    public boolean enabled;
+    public LocalTime startTime;
+    public int priority;
 
-    private List<Constraint> constraints;
+    private List<Constraint> constraints = new ArrayList<Constraint>();
 
-    public Activity(int id, int user_id, String name, Date duration, boolean enabled, Time startTime, int priority){
+    public Activity(int id, int user_id, String name, LocalTime duration, boolean enabled, LocalTime startTime, int priority){
         this.id = id;
         this.user_id = user_id;
         this.name = name;
@@ -39,8 +40,10 @@ public class Activity implements SQLObject {
         this.enabled = enabled;
         this.startTime = startTime;
         this.priority = priority;
+    }
 
-        constraints = new ArrayList<Constraint>();
+    public Activity(int id, int user_id, String name, LocalTime duration){
+        this(id, user_id, name, duration, true, null, 1);
     }
 
     @Override

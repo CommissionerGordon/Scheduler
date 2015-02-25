@@ -16,7 +16,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static com.github.commissionergordon.scheduler.jooq.generated.Tables.USER;
+import static com.github.commissionergordon.scheduler.jooq.generated.Tables.*;
 
 public class DBTestServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -26,16 +26,16 @@ public class DBTestServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         try(Connection conn = DriverManager.getConnection(Main.getDBConnectionString(), Main.getDbUser(), "")) {
-            DSLContext create = DSL.using(conn);
+            DSLContext database = DSL.using(conn);
 
             // Add users to the USER table
-            create.insertInto(USER, USER.USER_NAME)
+            database.insertInto(USER, USER.USER_NAME)
                     .values("Justin")
                     .values("Kyle")
                     .values("Brandon")
                     .values("Nathan").returning().fetch();
 
-            Result<Record> result = create.select().from(USER).fetch();
+            Result<Record> result = database.select().from(USER).fetch();
             out.println("Runs the statement 'SELECT * FROM USER'");
             out.println();
             out.println(result);

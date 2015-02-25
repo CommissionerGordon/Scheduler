@@ -18,8 +18,6 @@ public class Main extends Application {
 
     private static final String webappDir = "webapp/";
 
-    //TODO: Make sure the constraint tables' constraint_id's are replaced with activity_id's
-
     public static void main(String[] args) throws IOException, LifecycleException, ServletException {
         server = new Server();
         launch(args);
