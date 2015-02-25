@@ -11,10 +11,10 @@
             <directory>${project.build.directory}</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
-                <include>/classes</include>
-                <include>/db</include>
-                <include>/dependency-jars</include>
-                <include>/webapp</include>
+                <include>/db*/*</include>
+                <include>/dependency-jars*/*</include>
+                <include>/webapp*/*</include>
+                <include>/webapp/WEB-INF/*</include>
                 <include>*.jar</include>
             </includes>
         </fileSet>
