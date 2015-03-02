@@ -1,7 +1,8 @@
 package com.github.commissionergordon.scheduler.interfaces;
 
-import java.sql.Connection;
+import java.sql.SQLException;
 
 public interface SQLObject {
-    String getUpdateString();
+
+	void update() throws SQLException;
 }

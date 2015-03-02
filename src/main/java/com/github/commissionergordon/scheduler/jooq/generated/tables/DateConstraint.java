@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class DateConstraint extends org.jooq.impl.TableImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.DateConstraintRecord> {
 
-	private static final long serialVersionUID = -729942467;
+	private static final long serialVersionUID = -598847958;
 
 	/**
 	 * The reference instance of <code>PUBLIC.DATE_CONSTRAINT</code>
@@ -45,6 +45,11 @@ public class DateConstraint extends org.jooq.impl.TableImpl<com.github.commissio
 	 * The column <code>PUBLIC.DATE_CONSTRAINT.DATE</code>.
 	 */
 	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.DateConstraintRecord, java.sql.Date> DATE = createField("DATE", org.jooq.impl.SQLDataType.DATE.nullable(false), this, "");
+
+	/**
+	 * The column <code>PUBLIC.DATE_CONSTRAINT.CAN</code>.
+	 */
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.DateConstraintRecord, java.lang.Boolean> CAN = createField("CAN", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
 	/**
 	 * Create a <code>PUBLIC.DATE_CONSTRAINT</code> table reference

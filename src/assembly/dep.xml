@@ -11,7 +11,7 @@
             <directory>${project.build.directory}</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
-                <include>/db*/*</include>
+                <include>/resources/db*/*</include>
                 <include>/dependency-jars*/*</include>
                 <include>/webapp*/*</include>
                 <include>/webapp/WEB-INF/*</include>

@@ -1,26 +1,22 @@
 package com.github.commissionergordon.scheduler.classes;
 
+import com.github.commissionergordon.scheduler.Main;
+import com.github.commissionergordon.scheduler.interfaces.Constraint;
 import com.github.commissionergordon.scheduler.interfaces.SQLObject;
+import org.jooq.DSLContext;
+import org.jooq.impl.DSL;
 
-/*
-    WeekDayConstraint Table Schema
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-    WEEKDAY_CONSTRAINT_ID INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    ACTIVITY_ID           INTEGER NOT NULL,
-    CAN                   BOOLEAN NOT NULL,
-    SUNDAY                BOOLEAN DEFAULT FALSE NOT NULL,
-    MONDAY                BOOLEAN DEFAULT FALSE NOT NULL,
-    TUESDAY               BOOLEAN DEFAULT FALSE NOT NULL,
-    WEDNESDAY             BOOLEAN DEFAULT FALSE NOT NULL,
-    THURSDAY              BOOLEAN DEFAULT FALSE NOT NULL,
-    FRIDAY                BOOLEAN DEFAULT FALSE NOT NULL,
-    SATURDAY              BOOLEAN DEFAULT FALSE NOT NULL
-*/
+import static com.github.commissionergordon.scheduler.jooq.generated.Tables.WEEKDAY_CONSTRAINT;
 
-public class WeekDayConstraint implements SQLObject {
+public class WeekDayConstraint implements Constraint, SQLObject {
     private int id;
+	private Activity activity;
     private boolean can;
-    private int activity_id;
+
 
     public boolean monday;
     public boolean tuesday;
@@ -30,10 +26,10 @@ public class WeekDayConstraint implements SQLObject {
     public boolean saturday;
     public boolean sunday;
 
-    public WeekDayConstraint(int id, int activity_id, boolean can, boolean sunday, boolean monday, boolean tuesday,
+    public WeekDayConstraint(int id, Activity activity, boolean can, boolean sunday, boolean monday, boolean tuesday,
                              boolean wednesday, boolean thursday, boolean friday, boolean saturday) {
         this.id = id;
-        this.activity_id = activity_id;
+        this.activity = activity;
         this.can = can;
 
         this.monday = monday;
@@ -45,8 +41,23 @@ public class WeekDayConstraint implements SQLObject {
         this.sunday = sunday;
     }
 
-    @Override
-    public String getUpdateString() {
-        return null;
-    }
+	@Override
+	public void update() throws SQLException {
+		try(Connection conn = DriverManager.getConnection(Main.getDBConnectionString(), Main.getDbUser(), "")) {
+			DSLContext database = DSL.using(conn);
+
+			database.update(WEEKDAY_CONSTRAINT)
+				.set(WEEKDAY_CONSTRAINT.CAN, can)
+				.set(WEEKDAY_CONSTRAINT.MONDAY, monday)
+				.set(WEEKDAY_CONSTRAINT.TUESDAY, tuesday)
+				.set(WEEKDAY_CONSTRAINT.WEDNESDAY, wednesday)
+				.set(WEEKDAY_CONSTRAINT.THURSDAY, thursday)
+				.set(WEEKDAY_CONSTRAINT.FRIDAY, friday)
+				.set(WEEKDAY_CONSTRAINT.SATURDAY, saturday)
+				.set(WEEKDAY_CONSTRAINT.SUNDAY, sunday)
+				.where(WEEKDAY_CONSTRAINT.WEEKDAY_CONSTRAINT_ID.equal(id)
+					.and(WEEKDAY_CONSTRAINT.ACTIVITY_ID.equal(activity.getId())))
+				.returning().fetch();
+		}
+	}
 }

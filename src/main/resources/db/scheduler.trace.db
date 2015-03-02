@@ -2,7 +2,7 @@
 org.h2.jdbc.JdbcSQLException: Column "USER_ID" not found; SQL statement:
 CREATE TABLE PUBLIC.Activity
 (
-    activity_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    activity INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     FOREIGN KEY (user_id) REFERENCES PUBLIC.USER(USER_ID),
     activity_name VARCHAR(30) NOT NULL,
     activity_duration DATETIME NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE PUBLIC.Activity
 org.h2.jdbc.JdbcSQLException: Column "USER_ID" not found; SQL statement:
 CREATE TABLE PUBLIC.Activity
 (
-    activity_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    activity INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     FOREIGN KEY (user_id) REFERENCES USER(USER_ID),
     activity_name VARCHAR(30) NOT NULL,
     activity_duration DATETIME NOT NULL,

@@ -1,16 +1,18 @@
 package com.github.commissionergordon.scheduler.classes;
 
+import com.github.commissionergordon.scheduler.Main;
 import com.github.commissionergordon.scheduler.interfaces.SQLObject;
+import org.jooq.DSLContext;
+import org.jooq.impl.DSL;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-    User Table Schema
+import static com.github.commissionergordon.scheduler.jooq.generated.Tables.USER;
 
-    USER_ID INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    USER_NAME VARCHAR(30)
-*/
 
 public class User implements SQLObject {
 
@@ -26,8 +28,15 @@ public class User implements SQLObject {
         activities = new ArrayList<Activity>();
     }
 
-    @Override
-    public String getUpdateString() {
-        return null;
-    }
+	@Override
+	public void update() throws SQLException {
+		try(Connection conn = DriverManager.getConnection(Main.getDBConnectionString(), Main.getDbUser(), "")) {
+			DSLContext database = DSL.using(conn);
+
+			database.update(USER)
+				.set(USER.USER_NAME, name)
+				.where(USER.USER_ID.equal(id))
+				.returning().fetch();
+		}
+	}
 }

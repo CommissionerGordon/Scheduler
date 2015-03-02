@@ -1,29 +1,22 @@
 package com.github.commissionergordon.scheduler.classes;
 
-/*
-    MonthConstraint Table Schema
+import com.github.commissionergordon.scheduler.Main;
+import com.github.commissionergordon.scheduler.interfaces.Constraint;
+import com.github.commissionergordon.scheduler.interfaces.SQLObject;
+import org.jooq.DSLContext;
+import org.jooq.impl.DSL;
 
-    MONTH_CONSTRAINT_ID INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    ACTIVITY_ID         INTEGER NOT NULL,
-    CAN                 BOOLEAN NOT NULL,
-    JANUARY             BOOLEAN DEFAULT FALSE NOT NULL,
-    FEBRUARY            BOOLEAN DEFAULT FALSE NOT NULL,
-    MARCH               BOOLEAN DEFAULT FALSE NOT NULL,
-    APRIL               BOOLEAN DEFAULT FALSE NOT NULL,
-    MAY                 BOOLEAN DEFAULT FALSE NOT NULL,
-    JUNE                BOOLEAN DEFAULT FALSE NOT NULL,
-    JULY                BOOLEAN DEFAULT FALSE NOT NULL,
-    AUGUST              BOOLEAN DEFAULT FALSE NOT NULL,
-    SEPTEMBER           BOOLEAN DEFAULT FALSE NOT NULL,
-    OCTOBER             BOOLEAN DEFAULT FALSE NOT NULL,
-    NOVEMBER            BOOLEAN DEFAULT FALSE NOT NULL,
-    DECEMBER            BOOLEAN DEFAULT FALSE NOT NULL
-*/
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-public class MonthConstraint {
+import static com.github.commissionergordon.scheduler.jooq.generated.Tables.MONTH_CONSTRAINT;
+
+public class MonthConstraint implements Constraint, SQLObject {
     private int id;
+	private Activity activity;
     private boolean can;
-    private int activity_id;
+
     public boolean january;
     public boolean february;
     public boolean march;
@@ -37,9 +30,34 @@ public class MonthConstraint {
     public boolean november;
     public boolean december;
 
-    public MonthConstraint(int id, int activity_id, boolean can){
+    public MonthConstraint(int id, Activity activity, boolean can){
         this.id = id;
-        this.activity_id = activity_id;
+        this.activity = activity;
         this.can = can;
     }
+
+	@Override
+	public void update() throws SQLException {
+		try(Connection conn = DriverManager.getConnection(Main.getDBConnectionString(), Main.getDbUser(), "")) {
+			DSLContext database = DSL.using(conn);
+
+			database.update(MONTH_CONSTRAINT)
+				.set(MONTH_CONSTRAINT.CAN, can)
+				.set(MONTH_CONSTRAINT.JANUARY, january)
+				.set(MONTH_CONSTRAINT.FEBRAURY, february)
+				.set(MONTH_CONSTRAINT.MARCH, march)
+				.set(MONTH_CONSTRAINT.APRIL, april)
+				.set(MONTH_CONSTRAINT.MAY, may)
+				.set(MONTH_CONSTRAINT.JUNE, june)
+				.set(MONTH_CONSTRAINT.JULY, july)
+				.set(MONTH_CONSTRAINT.AUGUST, august)
+				.set(MONTH_CONSTRAINT.SEPTEMBER, september)
+				.set(MONTH_CONSTRAINT.OCTOBER, october)
+				.set(MONTH_CONSTRAINT.NOVEMBER, november)
+				.set(MONTH_CONSTRAINT.DECEMBER, december)
+				.where(MONTH_CONSTRAINT.MONTH_CONSTRAINT_ID.equal(id)
+					.and(MONTH_CONSTRAINT.ACTIVITY_ID.equal(activity.getId())))
+				.returning().fetch();
+		}
+	}
 }

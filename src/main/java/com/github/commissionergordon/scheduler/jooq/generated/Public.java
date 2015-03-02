@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends org.jooq.impl.SchemaImpl {
 
-	private static final long serialVersionUID = 863042232;
+	private static final long serialVersionUID = 1791959704;
 
 	/**
 	 * The reference instance of <code>PUBLIC</code>
@@ -57,10 +57,10 @@ public class Public extends org.jooq.impl.SchemaImpl {
 	private final java.util.List<org.jooq.Table<?>> getTables0() {
 		return java.util.Arrays.<org.jooq.Table<?>>asList(
 			com.github.commissionergordon.scheduler.jooq.generated.tables.User.USER,
-			com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY,
+			com.github.commissionergordon.scheduler.jooq.generated.tables.DateConstraint.DATE_CONSTRAINT,
 			com.github.commissionergordon.scheduler.jooq.generated.tables.WeekdayConstraint.WEEKDAY_CONSTRAINT,
 			com.github.commissionergordon.scheduler.jooq.generated.tables.MonthConstraint.MONTH_CONSTRAINT,
-			com.github.commissionergordon.scheduler.jooq.generated.tables.DateConstraint.DATE_CONSTRAINT,
-			com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint.TIME_CONSTRAINT);
+			com.github.commissionergordon.scheduler.jooq.generated.tables.TimeConstraint.TIME_CONSTRAINT,
+			com.github.commissionergordon.scheduler.jooq.generated.tables.Activity.ACTIVITY);
 	}
 }

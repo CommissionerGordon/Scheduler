@@ -16,7 +16,7 @@ package com.github.commissionergordon.scheduler.jooq.generated.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Activity extends org.jooq.impl.TableImpl<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord> {
 
-	private static final long serialVersionUID = 1750975127;
+	private static final long serialVersionUID = 1822293691;
 
 	/**
 	 * The reference instance of <code>PUBLIC.ACTIVITY</code>
@@ -49,7 +49,7 @@ public class Activity extends org.jooq.impl.TableImpl<com.github.commissionergor
 	/**
 	 * The column <code>PUBLIC.ACTIVITY.DURATION</code>.
 	 */
-	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.sql.Timestamp> DURATION = createField("DURATION", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.commissionergordon.scheduler.jooq.generated.tables.records.ActivityRecord, java.sql.Time> DURATION = createField("DURATION", org.jooq.impl.SQLDataType.TIME.nullable(false), this, "");
 
 	/**
 	 * The column <code>PUBLIC.ACTIVITY.ENABLED</code>.

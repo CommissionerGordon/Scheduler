@@ -1,13 +1,23 @@
 package com.github.commissionergordon.scheduler.classes;
 
+import com.github.commissionergordon.scheduler.Main;
 import com.github.commissionergordon.scheduler.interfaces.Constraint;
 import com.github.commissionergordon.scheduler.interfaces.SQLObject;
+import org.jooq.DSLContext;
+import org.jooq.Record;
+import org.jooq.Result;
+import org.jooq.impl.DSL;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Time;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.github.commissionergordon.scheduler.jooq.generated.Tables.*;
 
 /*
     Activity Table Schema
@@ -23,7 +33,7 @@ import java.util.List;
 
 public class Activity implements SQLObject {
     public int id;
-    public int user_id;
+    public User user;
     public String name;
     public LocalTime duration;
     public boolean enabled;
@@ -32,9 +42,9 @@ public class Activity implements SQLObject {
 
     private List<Constraint> constraints = new ArrayList<Constraint>();
 
-    public Activity(int id, int user_id, String name, LocalTime duration, boolean enabled, LocalTime startTime, int priority){
+    public Activity(int id, User user, String name, LocalTime duration, boolean enabled, LocalTime startTime, int priority){
         this.id = id;
-        this.user_id = user_id;
+        this.user = user;
         this.name = name;
         this.duration = duration;
         this.enabled = enabled;
@@ -42,12 +52,27 @@ public class Activity implements SQLObject {
         this.priority = priority;
     }
 
-    public Activity(int id, int user_id, String name, LocalTime duration){
-        this(id, user_id, name, duration, true, null, 1);
+    public Activity(int id, User user, String name, LocalTime duration){
+        this(id, user, name, duration, true, null, 1);
     }
 
+	public int getId() {
+		return id;
+	}
+
     @Override
-    public String getUpdateString() {
-        return null;
+    public void update() throws SQLException {
+		try(Connection conn = DriverManager.getConnection(Main.getDBConnectionString(), Main.getDbUser(), "")) {
+			DSLContext database = DSL.using(conn);
+
+			database.update(ACTIVITY)
+				.set(ACTIVITY.NAME, name)
+				.set(ACTIVITY.DURATION, Time.valueOf(duration))
+				.set(ACTIVITY.ENABLED, enabled)
+				.set(ACTIVITY.STARTTIME, Time.valueOf(startTime))
+				.set(ACTIVITY.PRIORITY, priority)
+				.where(ACTIVITY.ACTIVITY_ID.equal(id))
+				.returning().fetch();
+		}
     }
 }

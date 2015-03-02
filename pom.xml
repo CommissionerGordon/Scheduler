@@ -62,7 +62,7 @@
                 <directory>src/main/resources</directory>
             </resource>
             <resource>
-                <directory>db</directory>
+                <directory>src/main/resources/db</directory>
                 <targetPath>${project.build.directory}/db</targetPath>
             </resource>
             <resource>

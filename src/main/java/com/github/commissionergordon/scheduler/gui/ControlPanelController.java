@@ -13,7 +13,7 @@ import org.apache.catalina.LifecycleException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class WindowController implements Initializable {
+public class ControlPanelController implements Initializable {
     
     @FXML
     TextField portField;
