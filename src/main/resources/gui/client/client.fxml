@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.commissionergordon.scheduler.gui.client.ClientController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="1280.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane layoutY="25.0" prefHeight="100.0" prefWidth="1280.0" style="-fx-border-color: gray;" />
+      <AnchorPane layoutY="125.0" prefHeight="595.0" prefWidth="200.0" style="-fx-border-color: gray;">
+         <children>
+            <Button fx:id="btnDefaultActivity" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#addDefaultDay" prefHeight="25.0" prefWidth="172.0" text="Create Default Activity" />
+         </children>
+      </AnchorPane>
+      <ScrollPane layoutX="200.0" layoutY="125.0" prefHeight="595.0" prefWidth="1080.0">
+         <content>
+            <HBox fx:id="dayView" fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="593.0" style="-fx-border-color: green;" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

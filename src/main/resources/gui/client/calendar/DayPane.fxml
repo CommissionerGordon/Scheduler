@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane fx:id="titledPane" animated="false" collapsible="false" expanded="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="200.0" text="Lorem Ipsum">
+         <font>
+            <Font name="Segoe UI Light" size="20.0" />
+         </font>
+      </TitledPane>
+      <ListView fx:id="listView" layoutY="44.0" prefHeight="576.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

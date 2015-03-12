@@ -1,4 +1,4 @@
-package com.github.commissionergordon.scheduler.gui;
+package com.github.commissionergordon.scheduler.gui.server;
 
 import com.github.commissionergordon.scheduler.Main;
 import com.github.commissionergordon.scheduler.ServerRunnable;
