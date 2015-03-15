@@ -1,15 +1,14 @@
-package com.github.commissionergordon.scheduler.gui.client;
+package com.github.commissionergordon.scheduler.gui.client.calendar;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TitledPane;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class DayPane extends AnchorPane {
+public class DayPane extends VBox {
 
 	@FXML
 	TitledPane titledPane;

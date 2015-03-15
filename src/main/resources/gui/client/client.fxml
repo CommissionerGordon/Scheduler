@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.scene.control.*?>
@@ -30,12 +31,95 @@
       <AnchorPane layoutY="25.0" prefHeight="100.0" prefWidth="1280.0" style="-fx-border-color: gray;" />
       <AnchorPane layoutY="125.0" prefHeight="595.0" prefWidth="200.0" style="-fx-border-color: gray;">
          <children>
-            <Button fx:id="btnDefaultActivity" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#addDefaultDay" prefHeight="25.0" prefWidth="172.0" text="Create Default Activity" />
+            <Button fx:id="btnDefaultActivity" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" text="Create Default Activity" />
          </children>
       </AnchorPane>
-      <ScrollPane layoutX="200.0" layoutY="125.0" prefHeight="595.0" prefWidth="1080.0">
+      <ScrollPane focusTraversable="false" layoutX="200.0" layoutY="125.0" prefHeight="595.0" prefWidth="1080.0">
          <content>
-            <HBox fx:id="dayView" fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="593.0" style="-fx-border-color: green;" />
+            <HBox fx:id="dayView" fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1189.0" prefWidth="1064.0">
+               <children>
+                  <VBox prefHeight="1192.0" prefWidth="102.0">
+                     <children>
+                        <TitledPane fx:id="weekPaneHeader" animated="false" collapsible="false" expanded="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="75.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TitledPane>
+                        <ListView fx:id="timeListView" fixedCellSize="24.0" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1155.0" prefWidth="75.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="86.0" layoutY="11.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="141.0">
+                     <children>
+                        <TitledPane fx:id="mondayPane" animated="false" collapsible="false" expanded="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="71.0" text="00/00/00">
+                           <font>
+                              <Font name="Segoe UI Light" size="20.0" />
+                           </font>
+                        </TitledPane>
+                        <ListView fx:id="mondayListView" fixedCellSize="24.0" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1155.0" prefWidth="92.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="226.0" layoutY="11.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="141.0">
+                     <children>
+                        <TitledPane fx:id="tuesdayPane" animated="false" collapsible="false" expanded="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="71.0" text="00/00/00">
+                           <font>
+                              <Font name="Segoe UI Light" size="20.0" />
+                           </font>
+                        </TitledPane>
+                        <ListView fx:id="tuesdayListView" fixedCellSize="24.0" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1155.0" prefWidth="92.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="366.0" layoutY="11.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="141.0">
+                     <children>
+                        <TitledPane fx:id="wednesdayPane" animated="false" collapsible="false" expanded="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="71.0" text="00/00/00">
+                           <font>
+                              <Font name="Segoe UI Light" size="20.0" />
+                           </font>
+                        </TitledPane>
+                        <ListView fx:id="wednesdayListView" fixedCellSize="24.0" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1155.0" prefWidth="92.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="506.0" layoutY="11.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="141.0">
+                     <children>
+                        <TitledPane fx:id="thursdayPane" animated="false" collapsible="false" expanded="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="71.0" text="00/00/00">
+                           <font>
+                              <Font name="Segoe UI Light" size="20.0" />
+                           </font>
+                        </TitledPane>
+                        <ListView fx:id="thursdayListView" fixedCellSize="24.0" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1155.0" prefWidth="92.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="646.0" layoutY="11.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="141.0">
+                     <children>
+                        <TitledPane fx:id="fridayPane" animated="false" collapsible="false" expanded="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="71.0" text="00/00/00">
+                           <font>
+                              <Font name="Segoe UI Light" size="20.0" />
+                           </font>
+                        </TitledPane>
+                        <ListView fx:id="fridayListView" fixedCellSize="24.0" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1155.0" prefWidth="92.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="786.0" layoutY="11.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="141.0">
+                     <children>
+                        <TitledPane fx:id="saturdayPane" animated="false" collapsible="false" expanded="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="71.0" text="00/00/00">
+                           <font>
+                              <Font name="Segoe UI Light" size="20.0" />
+                           </font>
+                        </TitledPane>
+                        <ListView fx:id="saturdayListView" fixedCellSize="24.0" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1155.0" prefWidth="92.0" />
+                     </children>
+                  </VBox>
+                  <VBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="141.0">
+                     <children>
+                        <TitledPane fx:id="sundayPane" animated="false" collapsible="false" expanded="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="71.0" text="00/00/00">
+                           <font>
+                              <Font name="Segoe UI Light" size="20.0" />
+                           </font>
+                        </TitledPane>
+                        <ListView fx:id="sundayListView" fixedCellSize="24.0" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1155.0" prefWidth="92.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
          </content>
       </ScrollPane>
    </children>
