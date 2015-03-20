@@ -1,29 +1,39 @@
 package com.github.commissionergordon.scheduler.gui.client;
 
-import com.github.commissionergordon.scheduler.gui.client.calendar.DayPane;
-import com.github.commissionergordon.scheduler.gui.client.calendar.WeekPane;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TitledPane;
-import javafx.scene.layout.HBox;
-import org.joda.time.DateTimeConstants;
-import org.joda.time.LocalDate;
-import org.joda.time.chrono.GregorianChronology;
 
 import java.net.URL;
 import java.time.DayOfWeek;
-import java.time.chrono.Chronology;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ClientController implements Initializable {
 
+	@FXML
+	DatePicker displayDate;
+
+	@FXML
+	TitledPane monthYearPane;
+
+	@FXML
+	ListView timeListView;
+
+	@FXML
+	TitledPane sundayPane;
 	@FXML
 	TitledPane mondayPane;
 	@FXML
@@ -36,9 +46,9 @@ public class ClientController implements Initializable {
 	TitledPane fridayPane;
 	@FXML
 	TitledPane saturdayPane;
-	@FXML
-	TitledPane sundayPane;
 
+	@FXML
+	ListView<String> sundayListView;
 	@FXML
 	ListView<String> mondayListView;
 	@FXML
@@ -51,53 +61,43 @@ public class ClientController implements Initializable {
 	ListView<String> fridayListView;
 	@FXML
 	ListView<String> saturdayListView;
-	@FXML
-	ListView<String> sundayListView;
-
-
-	@FXML
-	ListView timeListView;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		initListViews();
+		cancelClickEvents();
 
+		// Sets the date picker's date
+		displayDate.setValue(LocalDate.now());
+		setDates(displayDate.getValue());
+
+		// Fills in the times to the left of the dates and the blank lines in the days
 		timeListView.setItems(getTimeList());
-		setWeekHeaders(LocalDate.now());
 		fillWithBlankLines();
+
+		// Tells the date picker what to do when a date is selected
+		displayDate.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if(displayDate.getValue() != null) {
+					setDates(displayDate.getValue());
+				}
+			}
+		});
 	}
 
-	private void setWeekHeaders(LocalDate date) {
-		LocalDate monday, tuesday, wednesday, thursday, friday, saturday, sunday;
+	// Adds events to the list views to cancel the user's selection
+	private void cancelClickEvents() {
+		timeListView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				Platform.runLater(new Runnable() {
+					public void run() {
+						timeListView.getSelectionModel().select(-1);
+					}
+				});
+			}
+		});
 
-		monday = date.withDayOfWeek(DateTimeConstants.MONDAY);
-		tuesday = date.withDayOfWeek(DateTimeConstants.TUESDAY);
-		wednesday = date.withDayOfWeek(DateTimeConstants.WEDNESDAY);
-		thursday = date.withDayOfWeek(DateTimeConstants.THURSDAY);
-		friday = date.withDayOfWeek(DateTimeConstants.FRIDAY);
-		saturday = date.withDayOfWeek(DateTimeConstants.SATURDAY);
-		sunday = date.withDayOfWeek(DateTimeConstants.SUNDAY);
-
-		mondayPane.textProperty().set(monday.toString());
-		tuesdayPane.textProperty().set(tuesday.toString());
-		wednesdayPane.textProperty().set(wednesday.toString());
-		thursdayPane.textProperty().set(thursday.toString());
-		fridayPane.textProperty().set(friday.toString());
-		saturdayPane.textProperty().set(saturday.toString());
-		sundayPane.textProperty().set(sunday.toString());
-	}
-
-	private void fillWithBlankLines() {
-		mondayListView.setItems(getEmptyList());
-		tuesdayListView.setItems(getEmptyList());
-		wednesdayListView.setItems(getEmptyList());
-		thursdayListView.setItems(getEmptyList());
-		fridayListView.setItems(getEmptyList());
-		saturdayListView.setItems(getEmptyList());
-		sundayListView.setItems(getEmptyList());
-	}
-
-	private void initListViews() {
 		mondayListView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			@Override
 			public void changed(ObservableValue observable, Number oldValue, Number newValue) {
@@ -174,6 +174,50 @@ public class ClientController implements Initializable {
 				});
 			}
 		});
+	}
+
+	// Populates all the needed titled panes with their dates
+	private void setDates(LocalDate date) {
+		LocalDate sunday, monday, tuesday, wednesday, thursday, friday, saturday;
+
+		// Sets the day of the week
+		int dayOfWeek = date.getDayOfWeek().getValue();
+
+		sunday = dayOfWeek == 7 ? date : date.minusDays(dayOfWeek);
+		monday = sunday.plusDays(1);
+		tuesday = monday.plusDays(1);
+		wednesday = tuesday.plusDays(1);
+		thursday = wednesday.plusDays(1);
+		friday = thursday.plusDays(1);
+		saturday = friday.plusDays(1);
+
+		// Sets the text of the day headers
+		sundayPane.textProperty().set(getDayText(sunday) + " " + sunday.getDayOfMonth());
+		mondayPane.textProperty().set(getDayText(monday) + " " + monday.getDayOfMonth());
+		tuesdayPane.textProperty().set(getDayText(tuesday) + " " + tuesday.getDayOfMonth());
+		wednesdayPane.textProperty().set(getDayText(wednesday) + " " + wednesday.getDayOfMonth());
+		thursdayPane.textProperty().set(getDayText(thursday) + " " + thursday.getDayOfMonth());
+		fridayPane.textProperty().set(getDayText(friday) + " " + friday.getDayOfMonth());
+		saturdayPane.textProperty().set(getDayText(saturday) + " " + saturday.getDayOfMonth());
+
+		// Sets the month and year titled pane
+		String month = sunday.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+		int year = sunday.getYear();
+		monthYearPane.setText(month + " " + year);
+	}
+
+	private void fillWithBlankLines() {
+		mondayListView.setItems(getEmptyList());
+		tuesdayListView.setItems(getEmptyList());
+		wednesdayListView.setItems(getEmptyList());
+		thursdayListView.setItems(getEmptyList());
+		fridayListView.setItems(getEmptyList());
+		saturdayListView.setItems(getEmptyList());
+		sundayListView.setItems(getEmptyList());
+	}
+
+	private String getDayText(LocalDate date) {
+		return date.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
 	}
 
 	private ObservableList<String> getTimeList() {
