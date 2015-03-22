@@ -1,30 +1,53 @@
 package com.github.commissionergordon.scheduler.gui.client;
 
+import com.github.commissionergordon.scheduler.classes.Activity;
+import com.github.commissionergordon.scheduler.classes.User;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TitledPane;
+import javafx.geometry.Insets;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 import java.net.URL;
-import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.TextStyle;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ClientController implements Initializable {
 
+	// Left Pane
+	@FXML
+	TextField textStartTime;
+
+	@FXML
+	TextField textDuration;
+
+	@FXML
+	ColorPicker cpColorPicker;
+
+	@FXML
+	Button btnClear;
+
+	// Main Content Pane
 	@FXML
 	DatePicker displayDate;
+
+	@FXML
+	Button btnAddActivity;
+
+	@FXML
+	Button btnRemoveActivity;
 
 	@FXML
 	TitledPane monthYearPane;
@@ -33,19 +56,34 @@ public class ClientController implements Initializable {
 	ListView timeListView;
 
 	@FXML
-	TitledPane sundayPane;
+	TitledPane sundayHeader;
 	@FXML
-	TitledPane mondayPane;
+	TitledPane mondayHeader;
 	@FXML
-	TitledPane tuesdayPane;
+	TitledPane tuesdayHeader;
 	@FXML
-	TitledPane wednesdayPane;
+	TitledPane wednesdayHeader;
 	@FXML
-	TitledPane thursdayPane;
+	TitledPane thursdayHeader;
 	@FXML
-	TitledPane fridayPane;
+	TitledPane fridayHeader;
 	@FXML
-	TitledPane saturdayPane;
+	TitledPane saturdayHeader;
+
+	@FXML
+	Pane sundayPane;
+	@FXML
+	Pane mondayPane;
+	@FXML
+	Pane tuesdayPane;
+	@FXML
+	Pane wednesdayPane;
+	@FXML
+	Pane thursdayPane;
+	@FXML
+	Pane fridayPane;
+	@FXML
+	Pane saturdayPane;
 
 	@FXML
 	ListView<String> sundayListView;
@@ -64,11 +102,13 @@ public class ClientController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		cpColorPicker.setValue(Color.RED);
+
 		cancelClickEvents();
 
 		// Sets the date picker's date
 		displayDate.setValue(LocalDate.now());
-		setDates(displayDate.getValue());
+		setDayDates(displayDate.getValue());
 
 		// Fills in the times to the left of the dates and the blank lines in the days
 		timeListView.setItems(getTimeList());
@@ -79,7 +119,7 @@ public class ClientController implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				if(displayDate.getValue() != null) {
-					setDates(displayDate.getValue());
+					setDayDates(displayDate.getValue());
 				}
 			}
 		});
@@ -177,7 +217,7 @@ public class ClientController implements Initializable {
 	}
 
 	// Populates all the needed titled panes with their dates
-	private void setDates(LocalDate date) {
+	private void setDayDates(LocalDate date) {
 		LocalDate sunday, monday, tuesday, wednesday, thursday, friday, saturday;
 
 		// Sets the day of the week
@@ -192,17 +232,21 @@ public class ClientController implements Initializable {
 		saturday = friday.plusDays(1);
 
 		// Sets the text of the day headers
-		sundayPane.textProperty().set(getDayText(sunday) + " " + sunday.getDayOfMonth());
-		mondayPane.textProperty().set(getDayText(monday) + " " + monday.getDayOfMonth());
-		tuesdayPane.textProperty().set(getDayText(tuesday) + " " + tuesday.getDayOfMonth());
-		wednesdayPane.textProperty().set(getDayText(wednesday) + " " + wednesday.getDayOfMonth());
-		thursdayPane.textProperty().set(getDayText(thursday) + " " + thursday.getDayOfMonth());
-		fridayPane.textProperty().set(getDayText(friday) + " " + friday.getDayOfMonth());
-		saturdayPane.textProperty().set(getDayText(saturday) + " " + saturday.getDayOfMonth());
+		sundayHeader.textProperty().set(getDayText(sunday) + " " + sunday.getDayOfMonth());
+		mondayHeader.textProperty().set(getDayText(monday) + " " + monday.getDayOfMonth());
+		tuesdayHeader.textProperty().set(getDayText(tuesday) + " " + tuesday.getDayOfMonth());
+		wednesdayHeader.textProperty().set(getDayText(wednesday) + " " + wednesday.getDayOfMonth());
+		thursdayHeader.textProperty().set(getDayText(thursday) + " " + thursday.getDayOfMonth());
+		fridayHeader.textProperty().set(getDayText(friday) + " " + friday.getDayOfMonth());
+		saturdayHeader.textProperty().set(getDayText(saturday) + " " + saturday.getDayOfMonth());
 
-		// Sets the month and year titled pane
-		String month = sunday.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
-		int year = sunday.getYear();
+		setMonthYearDate(sunday);
+	}
+
+	// Sets the month and year titled pane
+	private void setMonthYearDate(LocalDate date) {
+		String month = date.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+		int year = date.getYear();
 		monthYearPane.setText(month + " " + year);
 	}
 
@@ -235,4 +279,59 @@ public class ClientController implements Initializable {
 
 		return emptyList;
 	}
+
+	@FXML
+	public void addActivity() {
+		User user = new User(1, "Kyle");
+		Activity activity = new Activity(1, user, "Test Activity", LocalTime.of(getHours(textDuration), getMinutes(textDuration)));
+		activity.startTime = LocalTime.of(getHours(textStartTime), getMinutes(textStartTime));
+		sundayPane.getChildren().add(createRegion(activity, cpColorPicker.getValue()));
+
+		System.out.println("Start Time >> " + getHours(textStartTime) + ":" + getMinutes(textStartTime));
+		System.out.println("Duration >> " + getHours(textDuration) + ":" + getMinutes(textDuration));
+	}
+
+	private Region createRegion(Activity activity, Color color) {
+		Region region = createBaseRegion(color);
+		region.setPrefSize(121, (double) activity.duration.getHour() * 48 + (double) activity.duration.getMinute() * 48.0 / 60.0);
+		region.setLayoutX(10);
+		region.setLayoutY((double) activity.startTime.getHour() * 48 + (double) activity.startTime.getMinute() * 48.0 / 60.0);
+		return region;
+	}
+
+	private Region createBaseRegion(Color color) {
+		Region region = new Region();
+		region.setBackground(new Background(new BackgroundFill(Paint.valueOf(color.toString()), CornerRadii.EMPTY, Insets.EMPTY)));
+		region.setBorder(new Border(new BorderStroke(Paint.valueOf(color.toString()), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderStroke.THIN)));
+		region.setOpacity(.5);
+		return region;
+	}
+
+	private int getHours(TextField field) {
+		String text = field.getText();
+		if(!text.contains(":")) {
+			return 0;
+		}
+		int colonIndex = text.indexOf(":");
+		int hours = Integer.valueOf(text.substring(0, colonIndex));
+		return hours;
+	}
+
+	private int getMinutes(TextField field) {
+		String text = field.getText();
+		if(!text.contains(":")) {
+			return 0;
+		}
+		int colonIndex = text.indexOf(":");
+		int minutes = Integer.valueOf(text.substring(colonIndex + 1));
+		return minutes;
+	}
+
+	@FXML
+	public void clear() {
+		textStartTime.setText("");
+		textDuration.setText("");
+		cpColorPicker.setValue(Color.RED);
+	}
+
 }
