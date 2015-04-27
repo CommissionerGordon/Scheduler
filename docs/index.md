@@ -1,4 +1,5 @@
-#Scheduler
+# Scheduler
+
 An application by Team Scheduler  
 CSC 413 Advanced Software Development I  
 Spring 2015
@@ -92,17 +93,18 @@ Still working on it...
 
 ---
 
+#Conclusion
 ##What we completed
-In the end, we completed the basis for a scheduling web-interface application with a client-server model. Firstly, we were able to create a server that the user was able to launch on the host computer. The server has an interface in which a user can specify a port, launch the server, and end the server. On the client-side, the user is able to launch a web browser and connect to the server to give the client access the user interface. 
-
----
-
-##Problems faced
-Still working on it...
+In the end we completed the basis for a scheduling web-interface application with a client-server model. Firstly, we were able to create a server that the user was able to launch on the host computer. The server has an interface in which a user can specify a port, launch the server, and end the server. On the client-side, the user is able to launch a web browser and connect to the server to give the client access to the user interface. Using the user interface, a user is able to create very simple activities when the user selected a time and duration for the activity. 
 
 ---
 
 ##What had to be scrapped
+Currently the application is not able to send information between the server and the client. This means the data created by the application is stored client-side only and cannot be stored on a server. The information that the user can create on the client-side is very limited; the user cannot name activities, remove or edit activities, or create recurring events. Originally the application was going to include several other features such as an automated schedule optimization tool, multiple activity layers, and user logins. These features had to be scrapped to due to a combination of complications during development and lack of time.
+
+---
+
+##Problems faced
 Still working on it...
 
 ---
