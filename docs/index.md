@@ -4,10 +4,14 @@ An application by Team Scheduler
 CSC 413 Advanced Software Development I  
 Spring 2015
 
----
-
+<br>
 ##Overview of the software
 The scheduler will be an application that allows users to view possible schedules for activities during a given period of time. The application will allow users to create activities that want to be accomplished during the given time. It will also allow users to create conditions for activities or groups of activities, such as when a user wakes up, or what times the user would prefer to go to the gym. Given these activities and conditions, the application will provide optimal schedule options for the user for the given period of time.
+
+---
+
+<br><br><br>
+# Introduction
 
 ---
 
@@ -32,7 +36,10 @@ The functional aim of the project at launch was to create an interactable user i
 ##Goals
 In order to complete the project, the team had to become familiar with how a database and web server work. To provide a uniform build system while using version control between the team members, we sought out to learn Maven and the other benefits it brought with it, which included making the build process easier within our environment and giving guidelines for practices during development. In relation to the scope of the project, we decided that the best option for calculating the most optimized schedule for the user was by using a genetic algorithm, another field we had yet to approach. Last, but not least, was the front end side of development. Members of the team either used JavaFX for the first time and learned how to use the software platform or furthered their knowledge and efficiency for better future usage.
 
-----
+<br><br><br>
+#Body
+
+---
 
 ##Software architecture
 For this project, we implemented a number of different tools that ended up in our project architecture.
@@ -77,7 +84,7 @@ Still working on it...
 ---
 
 ##UML diagrams
-Still working on it...
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut risus porttitor, placerat dui nec, feugiat arcu. Sed sit amet tortor ex. Fusce ornare egestas molestie. Cras arcu ipsum, maximus id mollis vitae, consectetur ac dolor. Nam blandit eros congue leo scelerisque elementum. Nullam lorem quam, pellentesque vel faucibus quis, lacinia ac ipsum. Vivamus accumsan vel risus vel hendrerit. Phasellus congue laoreet tellus. Praesent ultrices neque ut tempor dictum. Sed imperdiet orci placerat, sodales velit vitae, auctor neque. Fusce libero risus, viverra vel vehicula vel, vehicula et orci. Donec dignissim orci non orci fringilla, sit amet lacinia ligula facilisis. Duis non metus malesuada, molestie enim sit amet, scelerisque magna. Pellentesque rutrum nec nisi et aliquet. Maecenas tristique eu dolor pellentesque pellentesque. Curabitur congue at ipsum ut accumsan.
 
 ---
 
@@ -89,11 +96,14 @@ The tables in the database were optimized to third normal form to keep data from
 ---
 
 ##Web interface
-Still working on it...
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut risus porttitor, placerat dui nec, feugiat arcu. Sed sit amet tortor ex. Fusce ornare egestas molestie. Cras arcu ipsum, maximus id mollis vitae, consectetur ac dolor. Nam blandit eros congue leo scelerisque elementum. Nullam lorem quam, pellentesque vel faucibus quis, lacinia ac ipsum. Vivamus accumsan vel risus vel hendrerit. Phasellus congue laoreet tellus. Praesent ultrices neque ut tempor dictum. Sed imperdiet orci placerat, sodales velit vitae, auctor neque. Fusce libero risus, viverra vel vehicula vel, vehicula et orci. Donec dignissim orci non orci fringilla, sit amet lacinia ligula facilisis. Duis non metus malesuada, molestie enim sit amet, scelerisque magna. Pellentesque rutrum nec nisi et aliquet. Maecenas tristique eu dolor pellentesque pellentesque. Curabitur congue at ipsum ut accumsan.
+
+
+<br><br>
+#Conclusion
 
 ---
 
-#Conclusion
 ##What we completed
 In the end we completed the basis for a scheduling web-interface application with a client-server model. Firstly, we were able to create a server that the user was able to launch on the host computer. The server has an interface in which a user can specify a port, launch the server, and end the server. On the client-side, the user is able to launch a web browser and connect to the server to give the client access to the user interface. Using the user interface, a user is able to create very simple activities when the user selected a time and duration for the activity. 
 
@@ -116,5 +126,3 @@ Still working on it...
 
 ##Next steps
 Still working on it...
-
----
