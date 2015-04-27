@@ -115,7 +115,7 @@ Currently the application is not able to send information between the server and
 ---
 
 ##Problems faced
-Still working on it...
+During the development of the scheduler application, the development team ran into a myriad of problems that hindered development. Some of the problems were created at the beginning of the project when the project’s scope was defined. Later on in the project’s development, we determined that we were not going to have enough time to complete the project.
 
 ---
 
