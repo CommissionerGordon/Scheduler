@@ -4,3 +4,5 @@
 *iml
 /tomcat.*
 Run.bat
+/site
+index.html
