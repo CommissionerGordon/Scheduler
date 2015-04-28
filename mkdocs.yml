@@ -1,7 +1,7 @@
 site_name: Scheduler
 repo_url: https://github.com/CommissionerGordon/Scheduler
 theme: yeti
-
+strict: true
 pages:
 - ['index.md', 'Documentation']
 - ['user-guide/running-server.md', 'User Guide', 'Running the server']

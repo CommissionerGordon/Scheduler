@@ -42,7 +42,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="site">Scheduler</a>
+            <a class="navbar-brand" href=".">Scheduler</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -52,7 +52,7 @@
             
             
                 <li class="active">
-                    <a href="site">Documentation</a>
+                    <a href=".">Documentation</a>
                 </li>
             
             
@@ -123,17 +123,13 @@
             <li><a href="#goals">Goals</a></li>
         
     
-        <li class="main "><a href="#body">Body</a></li>
+        <li class="main "><a href="#technical-specs">Technical Specs</a></li>
         
             <li><a href="#software-architecture">Software architecture</a></li>
         
             <li><a href="#software-lifecycle">Software lifecycle</a></li>
         
             <li><a href="#features">Features</a></li>
-        
-            <li><a href="#how-to-use-the-software">How to use the software</a></li>
-        
-            <li><a href="#software-architecture_1">Software architecture</a></li>
         
             <li><a href="#uml-diagrams">UML diagrams</a></li>
         
@@ -165,16 +161,16 @@ CSC 413 Advanced Software Development I<br />
 Spring 2015</p>
 <p><br></p>
 <h2 id="overview-of-the-software">Overview of the software</h2>
-<p>The scheduler will be an application that allows users to view possible schedules for activities during a given period of time. The application will allow users to create activities that want to be accomplished during the given time. It will also allow users to create conditions for activities or groups of activities, such as when a user wakes up, or what times the user would prefer to go to the gym. Given these activities and conditions, the application will provide optimal schedule options for the user for the given period of time.</p>
+<p>The scheduler is an application that allows users to view possible schedules for activities during a given period of time. It also allows users to create conditions for activities or groups of activities, such as when a user wakes up, or what times the user would prefer to go to the gym. Given these activities and conditions, the application provides optimal schedule options for the user for the given period of time.</p>
 <hr />
 <p><br><br><br></p>
 <h1 id="introduction">Introduction</h1>
 <hr />
 <h2 id="initial-requirements">Initial requirements</h2>
-<p>The basis for the project was to create an application that implemented a database and web-based user interface. Our software would create a locally hosted database that communicated with the application and create events with the restrictions given by the user.</p>
+<p>The basis for the project was to create an application that implemented a database and web-based user interface. Our software would create a locally hosted database that communicated with the application and saved user created activities and constraints into the database. We planned to use a Java graphical user interface library, called JavaFX, to create the web interface the user would interact with.</p>
 <hr />
 <h2 id="scope">Scope</h2>
-<p>The functional aim of the project at launch was to create an interactable user interface to which activities/events with restrictions, such as the duration, time, and date, could be added by the user. In the case that the user does not input a specific time or date for an event, the application will give the user an optimized schedule that includes each event.</p>
+<p>The functional aim of the project, at launch, was to create an interactable user interface to which activities/events with constraints, such as the duration, time, and date of an activity, could be scheduled by the user. In the case that the user does not input a specific time or date for an event, the application will give the user an optimized schedule that includes each activity.</p>
 <hr />
 <h2 id="team">Team</h2>
 <ul>
@@ -185,9 +181,9 @@ Spring 2015</p>
 </ul>
 <hr />
 <h2 id="goals">Goals</h2>
-<p>In order to complete the project, the team had to become familiar with how a database and web server work. To provide a uniform build system while using version control between the team members, we sought out to learn Maven and the other benefits it brought with it, which included making the build process easier within our environment and giving guidelines for practices during development. In relation to the scope of the project, we decided that the best option for calculating the most optimized schedule for the user was by using a genetic algorithm, another field we had yet to approach. Last, but not least, was the front end side of development. Members of the team either used JavaFX for the first time and learned how to use the software platform or furthered their knowledge and efficiency for better future usage.</p>
+<p>In order to complete the project, the team had to become familiar with databases and web servers. To provide a uniform build system, while using version control between the team members, we sought out to learn Maven and the other benefits it brought with it, which included making the build process easier within our environment and giving guidelines for practices during development. In relation to the scope of the project, we decided that the best option for calculating the most optimized schedule for the user was by using a genetic algorithm, another field we had yet to approach. Last, but not least, was the front end development. Members of the team either used JavaFX for the first time and learned how to use the software platform or furthered their knowledge and efficiency for better future usage.</p>
 <p><br><br><br></p>
-<h1 id="body">Body</h1>
+<h1 id="technical-specs">Technical Specs</h1>
 <hr />
 <h2 id="software-architecture">Software architecture</h2>
 <p>For this project, we implemented a number of different tools that ended up in our project architecture.</p>
@@ -196,26 +192,28 @@ Spring 2015</p>
 <li>JavaFX</li>
 <li>Apache Tomcat</li>
 <li>H2 Database</li>
+<li>Maven</li>
 </ul>
 <h3 id="java">Java</h3>
-<p>We chose Java as our primary programming language because of Java's powerful code-once run everywhere mentality. We also chose Java to take advantage of the JavaFX library, which is a library included in the Java Development Kit (JDK) that aids in the creation of graphical user interfaces (GUI). If you'd like to learn more about Java, click <a href="https://www.java.com/en/about/">here</a>.</p>
+<p>We chose Java as our primary programming language because of Java's powerful code-once run everywhere mentality. We also chose Java to take advantage of the JavaFX library, which is a library included in the Java Development Kit (JDK) that aids in the creation of graphical user interfaces (GUI).</p>
+<p>If you'd like to learn more about Java, click <a href="https://www.java.com/en/about/">here</a>.</p>
 <h3 id="javafx">JavaFX</h3>
-<p>After some research on JavaFX, we found we could run JavaFX applications in a browser, which would allow us to use our Java code and our existing knowledge of JavaFX to create the web interface. If you'd like to learn more about JavaFX, click <a href="http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm#JFXST784">here</a>.</p>
+<p>After some research on JavaFX, we found we could run JavaFX applications in a browser, which would allow us to use our Java code and our existing knowledge of JavaFX to create the web interface.</p>
+<p>If you'd like to learn more about JavaFX, click <a href="http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm#JFXST784">here</a>.</p>
 <h3 id="apache-tomcat">Apache Tomcat</h3>
-<p>Apache Tomcat was chosen over other Java servers, because research showed it to be the most supported, and really well documented. It also came with an embeddable version, which allowed us to easily embed a server instance into our application. With the tomcat server embedded into the application, we didn’t have to worry about the user needing to setup a standalone server and managing the apps that are installed on the server. If you'd like to learn more about Apache Tomcat, click <a href="http://tomcat.apache.org/">here</a>.</p>
+<p>Apache Tomcat was chosen over other Java servers, because research showed it to be the most supported, and really well documented. It also came with an embeddable version, which allowed us to easily embed a server instance into our application. With the tomcat server embedded into the application, we didn’t have to worry about the user needing to setup a standalone server and managing the apps that are installed on the server.</p>
+<p>If you'd like to learn more about Apache Tomcat, click <a href="http://tomcat.apache.org/">here</a>.</p>
 <h3 id="h2-database">H2 Database</h3>
-<p>H2 Database was our database of choice, because of it's Java compatibility, it's size, and it's ability to run in embedded mode. With the database embedded in the application, we minimize the amount of work the user has to do to run and maintain the application. If you'd like to learn more about H2 Database, click <a href="http://www.h2database.com/html/main.html">here</a>.</p>
+<p>H2 Database was our database of choice, because of it's Java compatibility, it's size, and it's ability to run in embedded mode. With the database embedded in the application, we minimize the amount of work the user has to do to run and maintain the application.</p>
+<p>If you'd like to learn more about H2 Database, click <a href="http://www.h2database.com/html/main.html">here</a>.</p>
+<h3 id="maven">Maven</h3>
+<p>Maven is a tool that helps the management of dependencies, as well as helping the build process of the project. We chose to use Maven because of it's ability to manage dependencies. Together with git, it was and <em>extremely</em> useful tool, as it allowed the team to worry about the project, and not about how they were going to manage all of the dependencies. It also helped keep the git repository small, as all of our dependency libraries didn't have to be version controlled.</p>
+<p>If you'd like to learn more about Maven, click <a href="https://maven.apache.org/">here</a>.</p>
 <hr />
 <h2 id="software-lifecycle">Software lifecycle</h2>
 <p>Still working on it...</p>
 <hr />
 <h2 id="features">Features</h2>
-<p>Still working on it...</p>
-<hr />
-<h2 id="how-to-use-the-software">How to use the software</h2>
-<p>Still working on it...</p>
-<hr />
-<h2 id="software-architecture_1">Software architecture</h2>
 <p>Still working on it...</p>
 <hr />
 <h2 id="uml-diagrams">UML diagrams</h2>
@@ -227,7 +225,7 @@ Spring 2015</p>
 <hr />
 <h2 id="web-interface">Web interface</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut risus porttitor, placerat dui nec, feugiat arcu. Sed sit amet tortor ex. Fusce ornare egestas molestie. Cras arcu ipsum, maximus id mollis vitae, consectetur ac dolor. Nam blandit eros congue leo scelerisque elementum. Nullam lorem quam, pellentesque vel faucibus quis, lacinia ac ipsum. Vivamus accumsan vel risus vel hendrerit. Phasellus congue laoreet tellus. Praesent ultrices neque ut tempor dictum. Sed imperdiet orci placerat, sodales velit vitae, auctor neque. Fusce libero risus, viverra vel vehicula vel, vehicula et orci. Donec dignissim orci non orci fringilla, sit amet lacinia ligula facilisis. Duis non metus malesuada, molestie enim sit amet, scelerisque magna. Pellentesque rutrum nec nisi et aliquet. Maecenas tristique eu dolor pellentesque pellentesque. Curabitur congue at ipsum ut accumsan.</p>
-<p><br><br></p>
+<p><br><br><br></p>
 <h1 id="conclusion">Conclusion</h1>
 <hr />
 <h2 id="what-we-completed">What we completed</h2>

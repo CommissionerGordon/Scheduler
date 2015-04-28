@@ -6,7 +6,7 @@ Spring 2015
 
 <br>
 ##Overview of the software
-The scheduler will be an application that allows users to view possible schedules for activities during a given period of time. The application will allow users to create activities that want to be accomplished during the given time. It will also allow users to create conditions for activities or groups of activities, such as when a user wakes up, or what times the user would prefer to go to the gym. Given these activities and conditions, the application will provide optimal schedule options for the user for the given period of time.
+The scheduler is an application that allows users to view possible schedules for activities during a given period of time. It also allows users to create conditions for activities or groups of activities, such as when a user wakes up, or what times the user would prefer to go to the gym. Given these activities and conditions, the application provides optimal schedule options for the user for the given period of time.
 
 ---
 
@@ -16,12 +16,12 @@ The scheduler will be an application that allows users to view possible schedule
 ---
 
 ##Initial requirements
-The basis for the project was to create an application that implemented a database and web-based user interface. Our software would create a locally hosted database that communicated with the application and create events with the restrictions given by the user.
+The basis for the project was to create an application that implemented a database and web-based user interface. Our software would create a locally hosted database that communicated with the application and saved user created activities and constraints into the database. We planned to use a Java graphical user interface library, called JavaFX, to create the web interface the user would interact with.
 
 ---
 
 ##Scope
-The functional aim of the project at launch was to create an interactable user interface to which activities/events with restrictions, such as the duration, time, and date, could be added by the user. In the case that the user does not input a specific time or date for an event, the application will give the user an optimized schedule that includes each event.
+The functional aim of the project, at launch, was to create an interactable user interface to which activities/events with constraints, such as the duration, time, and date of an activity, could be scheduled by the user. In the case that the user does not input a specific time or date for an event, the application will give the user an optimized schedule that includes each activity.
 
 ---
 
@@ -34,10 +34,10 @@ The functional aim of the project at launch was to create an interactable user i
 ---
 
 ##Goals
-In order to complete the project, the team had to become familiar with how a database and web server work. To provide a uniform build system while using version control between the team members, we sought out to learn Maven and the other benefits it brought with it, which included making the build process easier within our environment and giving guidelines for practices during development. In relation to the scope of the project, we decided that the best option for calculating the most optimized schedule for the user was by using a genetic algorithm, another field we had yet to approach. Last, but not least, was the front end side of development. Members of the team either used JavaFX for the first time and learned how to use the software platform or furthered their knowledge and efficiency for better future usage.
+In order to complete the project, the team had to become familiar with databases and web servers. To provide a uniform build system, while using version control between the team members, we sought out to learn Maven and the other benefits it brought with it, which included making the build process easier within our environment and giving guidelines for practices during development. In relation to the scope of the project, we decided that the best option for calculating the most optimized schedule for the user was by using a genetic algorithm, another field we had yet to approach. Last, but not least, was the front end development. Members of the team either used JavaFX for the first time and learned how to use the software platform or furthered their knowledge and efficiency for better future usage.
 
 <br><br><br>
-#Body
+#Technical Specs
 
 ---
 
@@ -48,18 +48,32 @@ For this project, we implemented a number of different tools that ended up in ou
 * JavaFX
 * Apache Tomcat
 * H2 Database
+* Maven
 
 ###Java
-We chose Java as our primary programming language because of Java's powerful code-once run everywhere mentality. We also chose Java to take advantage of the JavaFX library, which is a library included in the Java Development Kit (JDK) that aids in the creation of graphical user interfaces (GUI). If you'd like to learn more about Java, click [here](https://www.java.com/en/about/).
+We chose Java as our primary programming language because of Java's powerful code-once run everywhere mentality. We also chose Java to take advantage of the JavaFX library, which is a library included in the Java Development Kit (JDK) that aids in the creation of graphical user interfaces (GUI).
+
+If you'd like to learn more about Java, click [here](https://www.java.com/en/about/).
 
 ###JavaFX
-After some research on JavaFX, we found we could run JavaFX applications in a browser, which would allow us to use our Java code and our existing knowledge of JavaFX to create the web interface. If you'd like to learn more about JavaFX, click [here](http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm#JFXST784).
+After some research on JavaFX, we found we could run JavaFX applications in a browser, which would allow us to use our Java code and our existing knowledge of JavaFX to create the web interface.
+
+If you'd like to learn more about JavaFX, click [here](http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm#JFXST784).
 
 ###Apache Tomcat
-Apache Tomcat was chosen over other Java servers, because research showed it to be the most supported, and really well documented. It also came with an embeddable version, which allowed us to easily embed a server instance into our application. With the tomcat server embedded into the application, we didn’t have to worry about the user needing to setup a standalone server and managing the apps that are installed on the server. If you'd like to learn more about Apache Tomcat, click [here](http://tomcat.apache.org/).
+Apache Tomcat was chosen over other Java servers, because research showed it to be the most supported, and really well documented. It also came with an embeddable version, which allowed us to easily embed a server instance into our application. With the tomcat server embedded into the application, we didn’t have to worry about the user needing to setup a standalone server and managing the apps that are installed on the server.
+
+If you'd like to learn more about Apache Tomcat, click [here](http://tomcat.apache.org/).
 
 ###H2 Database
-H2 Database was our database of choice, because of it's Java compatibility, it's size, and it's ability to run in embedded mode. With the database embedded in the application, we minimize the amount of work the user has to do to run and maintain the application. If you'd like to learn more about H2 Database, click [here](http://www.h2database.com/html/main.html).
+H2 Database was our database of choice, because of it's Java compatibility, it's size, and it's ability to run in embedded mode. With the database embedded in the application, we minimize the amount of work the user has to do to run and maintain the application.
+
+If you'd like to learn more about H2 Database, click [here](http://www.h2database.com/html/main.html).
+
+###Maven
+Maven is a tool that helps the management of dependencies, as well as helping the build process of the project. We chose to use Maven because of it's ability to manage dependencies. Together with git, it was and _extremely_ useful tool, as it allowed the team to worry about the project, and not about how they were going to manage all of the dependencies. It also helped keep the git repository small, as all of our dependency libraries didn't have to be version controlled.
+
+If you'd like to learn more about Maven, click [here](https://maven.apache.org/).
 
 ---
 
@@ -69,16 +83,6 @@ Still working on it...
 ---
 
 ##Features
-Still working on it...
-
----
-
-##How to use the software
-Still working on it...
-
----
-
-##Software architecture
 Still working on it...
 
 ---
@@ -99,7 +103,7 @@ The tables in the database were optimized to third normal form to keep data from
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut risus porttitor, placerat dui nec, feugiat arcu. Sed sit amet tortor ex. Fusce ornare egestas molestie. Cras arcu ipsum, maximus id mollis vitae, consectetur ac dolor. Nam blandit eros congue leo scelerisque elementum. Nullam lorem quam, pellentesque vel faucibus quis, lacinia ac ipsum. Vivamus accumsan vel risus vel hendrerit. Phasellus congue laoreet tellus. Praesent ultrices neque ut tempor dictum. Sed imperdiet orci placerat, sodales velit vitae, auctor neque. Fusce libero risus, viverra vel vehicula vel, vehicula et orci. Donec dignissim orci non orci fringilla, sit amet lacinia ligula facilisis. Duis non metus malesuada, molestie enim sit amet, scelerisque magna. Pellentesque rutrum nec nisi et aliquet. Maecenas tristique eu dolor pellentesque pellentesque. Curabitur congue at ipsum ut accumsan.
 
 
-<br><br>
+<br><br><br>
 #Conclusion
 
 ---
