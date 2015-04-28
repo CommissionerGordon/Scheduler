@@ -127,7 +127,9 @@
         
             <li><a href="#software-architecture">Software Architecture</a></li>
         
-            <li><a href="#uml-diagrams">UML diagrams</a></li>
+            <li><a href="#uml">UML</a></li>
+        
+            <li><a href="#classes-explained">Classes explained</a></li>
         
             <li><a href="#database">Database</a></li>
         
@@ -188,6 +190,7 @@ Spring 2015</p>
 <li>JavaFX</li>
 <li>Apache Tomcat</li>
 <li>H2 Database</li>
+<li>jOOQ</li>
 <li>Maven</li>
 </ul>
 <h3 id="java">Java</h3>
@@ -202,16 +205,114 @@ Spring 2015</p>
 <h3 id="h2-database">H2 Database</h3>
 <p>H2 Database was our database of choice, because of it's Java compatibility, it's size, and it's ability to run in embedded mode. With the database embedded in the application, we minimize the amount of work the user has to do to run and maintain the application.</p>
 <p>If you'd like to learn more about H2 Database, click <a href="http://www.h2database.com/html/main.html">here</a>.</p>
-<h3 id="maven">Maven</h3>
-<p>Maven is a tool that helps the management of dependencies, as well as helping the build process of the project. We chose to use Maven because of it's ability to manage dependencies. Together with git, it was an <em>extremely</em> useful tool, as it allowed the team to worry about the project, and not about how they were going to manage all of the dependencies. It also helped keep the git repository small, as all of our dependency libraries didn't have to be version controlled.</p>
-<p>If you'd like to learn more about Maven, click <a href="https://maven.apache.org/">here</a>.</p>
+<h3 id="jooq">jOOQ</h3>
+<p>jOOQ was nifty library found early in development, that aids in writing SQL code in Java. The syntax is really intuitive, and helped maked things visually cleaner in the code. With a little setup, it generates classes that represent your tables, and then those classes can be used within the SQL statements. Here’s an example from our database test servlet.</p>
+<pre><code class="java">// Add users to the USER table
+database.insertInto(USER, USER.USER_NAME)
+    .values(&quot;Justin&quot;)
+    .values(&quot;Kyle&quot;)
+    .values(&quot;Brandon&quot;)
+    .values(&quot;Nathan&quot;).returning().fetch();
+</code></pre>
+
+<p>If you'd like to learn more about jOOQ, click <a href="http://www.jooq.org/">here</a>.</p>
 <hr />
-<h2 id="uml-diagrams">UML diagrams</h2>
-<p>Still working on it...</p>
+<h2 id="uml">UML</h2>
+<p><img alt="Class Diagram" src="./img/class-diagram.png" />
+<em>Above is the class diagram for the Scheduler application</em></p>
+<p>An explanation of most of the classes shown in the class diagram can be found in <a href=".#classes-explained">classes explained</a>.</p>
+<hr />
+<h2 id="classes-explained">Classes explained</h2>
+<p>Here, we will explain the classes that make up the application, and a little about how they were designed.</p>
+<h3 id="activity">Activity</h3>
+<p>Starting at the beginning, we have the Activity class. An activity is something somebody starts during their day, and continues doing for some amount of time. Therefore, the Activity class was given a start time and a duration. However, there might be a few rules about an activity, such as if it repeats, and on what days it doesn’t repeat. These rules have been created, and are represented by the Constraint classes talked about in <a href=".#constraints">constraints</a>.</p>
+<h3 id="constraints">Constraints</h3>
+<p>Constraints are the rules that govern when an activity may take place. All the rules were designed with the ability to automatically optimize the schedule for the user in mind. We have come up with a few constraints, that will be briefly discussed with examples.</p>
+<h4 id="time-constraint">Time Constraint</h4>
+<p>A constraint that gives an activity a period of time in which it can, or cannot exist.</p>
+<blockquote>
+<p>I’d like to gym today, but only between the hours of 9:00am and 5:00pm.</p>
+</blockquote>
+<h4 id="weekday-constraint">Weekday Constraint</h4>
+<p>A constraint that gives an activity weekdays in which it can, or cannot exist.</p>
+<blockquote>
+<p>I’d like to go swimming this week, but only on Mondays and Wednesdays.</p>
+</blockquote>
+<h4 id="month-constraint">Month Constraint</h4>
+<p>A constraint that gives and activity months in which it can, or cannot exist.</p>
+<blockquote>
+<p>I’d like to plant flowers this year, but only in the months of April and May.</p>
+</blockquote>
+<h4 id="date-constraint">Date Constraint</h4>
+<p>A constraint that gives an activity a date in which it can, or cannot exist.</p>
+<blockquote>
+<p>My birthday falls on the 8th of July.</p>
+</blockquote>
+<h3 id="sqlobject">SQLObject</h3>
+<p>Both the activity class and the all of the constraint classes are pretty much 1-to-1 copies of their database counterparts. The classes were designed with the database tables in mind to make reading and writing objects into the database easier.</p>
+<p>With that, each class that was going to have instances of itself be in the database inherit from SQLObject. The idea for this was to make sure all of the classes had and update function, which would be used to update each field in the database that corresponded to that particular object, making the reading and writing of objects easy for ourselves.</p>
+<h3 id="server">Server</h3>
+<p>This class holds the embedded Apache Tomcat server, a port number for accessing the server, and functions for starting and stopping the server. This class isn’t too extreme, and the code behind it is pretty simple. Upon initialization, a tomcat server instance is created.</p>
+<pre><code class="java">public Server() throws ServletException {
+    tomcat = new Tomcat();
+    running = false;
+}
+</code></pre>
+
+<p>When the server object is started, it set’s the server port number, starts the tomcat server, and then waits for connections.</p>
+<pre><code class="java">public void start() throws LifecycleException {
+    System.out.println(&quot;Starting Tomcat Server on port &quot; + port);
+    running = true;
+
+    // All initialization should be done before the tomcat object is touched
+    tomcat.setPort(port);
+    tomcat.start();
+    tomcat.getServer().await();
+}
+</code></pre>
+
+<p>Stopping the server object stops the tomcat server instance.</p>
+<pre><code class="java">public void stop() throws LifecycleException {
+    System.out.println(&quot;Stopping Tomcat Server...&quot;);
+    running = false;
+
+    // All objects must be stopped before tomcat is touched
+    tomcat.stop();
+}
+</code></pre>
+
 <hr />
 <h2 id="database">Database</h2>
 <p>As mentioned before, we chose to use H2 Database for our database implementation. We opted to run H2 in embedded mode, which would allow the database to exist within the application, and create less hassle on the user’s end by not requiring them to run an external database.</p>
 <p>The tables in the database were optimized to third normal form to keep data from being duplicated within the database. Duplicated data is never a good idea, as data that needs to be changed would have to be changed in multiple tables, making the work harder for ourselves.</p>
+<p>As for connecting to the database, there was very minimal code. First, in the main class, there are some variables that hold the H2 connection string, and the username for logging into the database.</p>
+<pre><code class="java">public class Main extends Application {
+
+    private static Server server;
+    private static final String dbConnection = &quot;jdbc:h2:./db/scheduler&quot;;
+    private static final String dbUser = &quot;sa&quot;;
+    …
+}
+</code></pre>
+
+<p>Then to connect, we just need to establish a connection using those variables.</p>
+<pre><code class="java">Connection conn = DriverManager.getConnection(Main.getDBConnectionString(), Main.getDbUser(), &quot;&quot;);
+</code></pre>
+
+<p>Using the connection object, we can then use jOOQ to write or read from the database.</p>
+<pre><code class="java">DSLContext database = DSL.using(conn);
+
+// Add users to the USER table
+database.insertInto(USER, USER.USER_NAME)
+    .values(&quot;Justin&quot;)
+    .values(&quot;Kyle&quot;)
+    .values(&quot;Brandon&quot;)
+    .values(&quot;Nathan&quot;).returning().fetch();
+
+// Runs the equivalent of SELECT * FROM USER
+Result&lt;Record&gt; result = database.select().from(USER).fetch();
+</code></pre>
+
 <hr />
 <h2 id="web-interface">Web Interface</h2>
 <p>As stated above, we chose to use a JavaFX application as our web interface. A couple members of the team had experience using JavaFX before, and it came as a natural choice for our web interface after choosing Java as our main language, as the two would come together really nicely.</p>

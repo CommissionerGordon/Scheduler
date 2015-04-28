@@ -48,6 +48,7 @@ For this project, we implemented a number of different tools that ended up in ou
 * JavaFX
 * Apache Tomcat
 * H2 Database
+* jOOQ
 * Maven
 
 ###Java
@@ -70,15 +71,89 @@ H2 Database was our database of choice, because of it's Java compatibility, it's
 
 If you'd like to learn more about H2 Database, click [here](http://www.h2database.com/html/main.html).
 
-###Maven
-Maven is a tool that helps the management of dependencies, as well as helping the build process of the project. We chose to use Maven because of it's ability to manage dependencies. Together with git, it was an _extremely_ useful tool, as it allowed the team to worry about the project, and not about how they were going to manage all of the dependencies. It also helped keep the git repository small, as all of our dependency libraries didn't have to be version controlled.
+###jOOQ
+jOOQ was nifty library found early in development, that aids in writing SQL code in Java. The syntax is really intuitive, and helped maked things visually cleaner in the code. With a little setup, it generates classes that represent your tables, and then those classes can be used within the SQL statements. Here’s an example from our database test servlet.
+```java
+// Add users to the USER table
+database.insertInto(USER, USER.USER_NAME)
+    .values("Justin")
+    .values("Kyle")
+    .values("Brandon")
+    .values("Nathan").returning().fetch();
+```
 
-If you'd like to learn more about Maven, click [here](https://maven.apache.org/).
+If you'd like to learn more about jOOQ, click [here](http://www.jooq.org/).
 
 ---
 
-##UML diagrams
-Still working on it...
+##UML
+![Class Diagram](img/class-diagram.png)
+*Above is the class diagram for the Scheduler application*
+
+An explanation of most of the classes shown in the class diagram can be found in [classes explained](index.md#classes-explained).
+
+---
+
+##Classes explained
+Here, we will explain the classes that make up the application, and a little about how they were designed.
+
+###Activity
+Starting at the beginning, we have the Activity class. An activity is something somebody starts during their day, and continues doing for some amount of time. Therefore, the Activity class was given a start time and a duration. However, there might be a few rules about an activity, such as if it repeats, and on what days it doesn’t repeat. These rules have been created, and are represented by the Constraint classes talked about in [constraints](index.md#constraints).
+
+###Constraints
+Constraints are the rules that govern when an activity may take place. All the rules were designed with the ability to automatically optimize the schedule for the user in mind. We have come up with a few constraints, that will be briefly discussed with examples.
+
+####Time Constraint
+A constraint that gives an activity a period of time in which it can, or cannot exist.
+> I’d like to gym today, but only between the hours of 9:00am and 5:00pm.
+
+####Weekday Constraint
+A constraint that gives an activity weekdays in which it can, or cannot exist.
+> I’d like to go swimming this week, but only on Mondays and Wednesdays.
+
+####Month Constraint
+A constraint that gives and activity months in which it can, or cannot exist.
+> I’d like to plant flowers this year, but only in the months of April and May.
+
+####Date Constraint
+A constraint that gives an activity a date in which it can, or cannot exist.
+> My birthday falls on the 8th of July.
+
+###SQLObject
+Both the activity class and the all of the constraint classes are pretty much 1-to-1 copies of their database counterparts. The classes were designed with the database tables in mind to make reading and writing objects into the database easier.
+
+With that, each class that was going to have instances of itself be in the database inherit from SQLObject. The idea for this was to make sure all of the classes had and update function, which would be used to update each field in the database that corresponded to that particular object, making the reading and writing of objects easy for ourselves.
+
+###Server
+This class holds the embedded Apache Tomcat server, a port number for accessing the server, and functions for starting and stopping the server. This class isn’t too extreme, and the code behind it is pretty simple. Upon initialization, a tomcat server instance is created.
+```java
+public Server() throws ServletException {
+    tomcat = new Tomcat();
+    running = false;
+}
+```
+When the server object is started, it set’s the server port number, starts the tomcat server, and then waits for connections.
+```java
+public void start() throws LifecycleException {
+    System.out.println("Starting Tomcat Server on port " + port);
+    running = true;
+    
+    // All initialization should be done before the tomcat object is touched
+    tomcat.setPort(port);
+    tomcat.start();
+    tomcat.getServer().await();
+}
+```
+Stopping the server object stops the tomcat server instance.
+```java
+public void stop() throws LifecycleException {
+    System.out.println("Stopping Tomcat Server...");
+    running = false;
+    
+    // All objects must be stopped before tomcat is touched
+    tomcat.stop();
+}
+```
 
 ---
 
@@ -87,6 +162,34 @@ As mentioned before, we chose to use H2 Database for our database implementation
 
 The tables in the database were optimized to third normal form to keep data from being duplicated within the database. Duplicated data is never a good idea, as data that needs to be changed would have to be changed in multiple tables, making the work harder for ourselves.
 
+As for connecting to the database, there was very minimal code. First, in the main class, there are some variables that hold the H2 connection string, and the username for logging into the database.
+```java
+public class Main extends Application {
+
+    private static Server server;
+    private static final String dbConnection = "jdbc:h2:./db/scheduler";
+    private static final String dbUser = "sa";
+    …
+}
+```
+Then to connect, we just need to establish a connection using those variables.
+```java
+Connection conn = DriverManager.getConnection(Main.getDBConnectionString(), Main.getDbUser(), "");
+```
+Using the connection object, we can then use jOOQ to write or read from the database.
+```java
+DSLContext database = DSL.using(conn);
+
+// Add users to the USER table
+database.insertInto(USER, USER.USER_NAME)
+    .values("Justin")
+    .values("Kyle")
+    .values("Brandon")
+    .values("Nathan").returning().fetch();
+
+// Runs the equivalent of SELECT * FROM USER
+Result<Record> result = database.select().from(USER).fetch();
+```
 ---
 
 ##Web Interface
