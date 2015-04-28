@@ -198,7 +198,7 @@ Spring 2015</p>
 <p>We chose Java as our primary programming language because of Java's powerful code-once run everywhere mentality. We also chose Java to take advantage of the JavaFX library, which is a library included in the Java Development Kit (JDK) that aids in the creation of graphical user interfaces (GUI).</p>
 <p>If you'd like to learn more about Java, click <a href="https://www.java.com/en/about/">here</a>.</p>
 <h3 id="javafx">JavaFX</h3>
-<p>After some research on JavaFX, we found we could run JavaFX applications in a browser, which would allow us to use our Java code and our existing knowledge of JavaFX to create the web interface.</p>
+<p>After some research on JavaFX, we found we could run JavaFX applications in a browser, which would allow us to use our Java code and our existing knowledge of JavaFX to create the web interface. See <a href=".#creating-the-web-interface">creating the web interface</a> for more information.</p>
 <p>If you'd like to learn more about JavaFX, click <a href="http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm#JFXST784">here</a>.</p>
 <h3 id="apache-tomcat">Apache Tomcat</h3>
 <p>Apache Tomcat was chosen over other Java servers, because research showed it to be the most supported, and really well documented. It also came with an embeddable version, which allowed us to easily embed a server instance into our application. With the tomcat server embedded into the application, we didn’t have to worry about the user needing to setup a standalone server and managing the apps that are installed on the server.</p>
@@ -224,7 +224,12 @@ Spring 2015</p>
 <p>The tables in the database were optimized to third normal form to keep data from being duplicated within the database. Duplicated data is never a good idea, as data that needs to be changed would have to be changed in multiple tables, making the work harder for ourselves.</p>
 <hr />
 <h2 id="web-interface">Web interface</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut risus porttitor, placerat dui nec, feugiat arcu. Sed sit amet tortor ex. Fusce ornare egestas molestie. Cras arcu ipsum, maximus id mollis vitae, consectetur ac dolor. Nam blandit eros congue leo scelerisque elementum. Nullam lorem quam, pellentesque vel faucibus quis, lacinia ac ipsum. Vivamus accumsan vel risus vel hendrerit. Phasellus congue laoreet tellus. Praesent ultrices neque ut tempor dictum. Sed imperdiet orci placerat, sodales velit vitae, auctor neque. Fusce libero risus, viverra vel vehicula vel, vehicula et orci. Donec dignissim orci non orci fringilla, sit amet lacinia ligula facilisis. Duis non metus malesuada, molestie enim sit amet, scelerisque magna. Pellentesque rutrum nec nisi et aliquet. Maecenas tristique eu dolor pellentesque pellentesque. Curabitur congue at ipsum ut accumsan.</p>
+<p>As stated above, we chose to use a JavaFX application as our web interface. A couple members of the team had experience using JavaFX before, and it came as a natural choice for our web interface after choosing Java as our main language, as the two would come together really nicely.</p>
+<h3 id="creating-the-web-interface">Creating the web interface</h3>
+<p>The graphical user interface is designed either by typing out FXML, which is JavaFX’s implementation of the XML language for use with their JavaFX library, or with Scene Builder. Scene Builder is an application by Oracle, the makers of Java and JavaFX, to aid in the creation of JavaFX forms. It uses drag-and-drop containers and controls that allow the user to graphically design a form, with little to no programming involved. After the form is designed in Scene Builder, the form is saved as an FXML file. Whether the file is written manually, or created in Scene Builder, an FXML file is produced.</p>
+<p>If you’d like to learn more about Scene Builder, click <a href="http://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-info-2157684.html">here</a>.</p>
+<p>Once the form was created, a controller class was made to program the logic behind the buttons and fields, and tie them to other functions within the application. The form is is then told about the controller class, and everything starts to work like magic.</p>
+<p>As a side note, this was also the exact process used when creating the server control panel. It is also a JavaFX application.</p>
 <p><br><br><br></p>
 <h1 id="conclusion">Conclusion</h1>
 <hr />

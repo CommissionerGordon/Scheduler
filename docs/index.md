@@ -56,7 +56,7 @@ We chose Java as our primary programming language because of Java's powerful cod
 If you'd like to learn more about Java, click [here](https://www.java.com/en/about/).
 
 ###JavaFX
-After some research on JavaFX, we found we could run JavaFX applications in a browser, which would allow us to use our Java code and our existing knowledge of JavaFX to create the web interface.
+After some research on JavaFX, we found we could run JavaFX applications in a browser, which would allow us to use our Java code and our existing knowledge of JavaFX to create the web interface. See [creating the web interface](index.md#creating-the-web-interface) for more information.
 
 If you'd like to learn more about JavaFX, click [here](http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm#JFXST784).
 
@@ -100,7 +100,16 @@ The tables in the database were optimized to third normal form to keep data from
 ---
 
 ##Web interface
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut risus porttitor, placerat dui nec, feugiat arcu. Sed sit amet tortor ex. Fusce ornare egestas molestie. Cras arcu ipsum, maximus id mollis vitae, consectetur ac dolor. Nam blandit eros congue leo scelerisque elementum. Nullam lorem quam, pellentesque vel faucibus quis, lacinia ac ipsum. Vivamus accumsan vel risus vel hendrerit. Phasellus congue laoreet tellus. Praesent ultrices neque ut tempor dictum. Sed imperdiet orci placerat, sodales velit vitae, auctor neque. Fusce libero risus, viverra vel vehicula vel, vehicula et orci. Donec dignissim orci non orci fringilla, sit amet lacinia ligula facilisis. Duis non metus malesuada, molestie enim sit amet, scelerisque magna. Pellentesque rutrum nec nisi et aliquet. Maecenas tristique eu dolor pellentesque pellentesque. Curabitur congue at ipsum ut accumsan.
+As stated above, we chose to use a JavaFX application as our web interface. A couple members of the team had experience using JavaFX before, and it came as a natural choice for our web interface after choosing Java as our main language, as the two would come together really nicely.
+
+###Creating the web interface
+The graphical user interface is designed either by typing out FXML, which is JavaFX’s implementation of the XML language for use with their JavaFX library, or with Scene Builder. Scene Builder is an application by Oracle, the makers of Java and JavaFX, to aid in the creation of JavaFX forms. It uses drag-and-drop containers and controls that allow the user to graphically design a form, with little to no programming involved. After the form is designed in Scene Builder, the form is saved as an FXML file. Whether the file is written manually, or created in Scene Builder, an FXML file is produced.
+
+If you’d like to learn more about Scene Builder, click [here](http://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-info-2157684.html).
+
+Once the form was created, a controller class was made to program the logic behind the buttons and fields, and tie them to other functions within the application. The form is is then told about the controller class, and everything starts to work like magic.
+
+As a side note, this was also the exact process used when creating the server control panel. It is also a JavaFX application.
 
 
 <br><br><br>
