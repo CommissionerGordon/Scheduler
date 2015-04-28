@@ -41,7 +41,7 @@ In order to complete the project, the team had to become familiar with databases
 
 ---
 
-##Software Architecture
+##Project Architecture
 For this project, we implemented a number of different tools that ended up in our project architecture.
 
 * Java
