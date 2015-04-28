@@ -41,7 +41,7 @@ In order to complete the project, the team had to become familiar with databases
 
 ---
 
-##Software architecture
+##Software Architecture
 For this project, we implemented a number of different tools that ended up in our project architecture.
 
 * Java
@@ -51,7 +51,7 @@ For this project, we implemented a number of different tools that ended up in ou
 * Maven
 
 ###Java
-We chose Java as our primary programming language because of Java's powerful code-once run everywhere mentality. We also chose Java to take advantage of the JavaFX library, which is a library included in the Java Development Kit (JDK) that aids in the creation of graphical user interfaces (GUI).
+We chose Java as our primary programming language because of Java's powerful code-once run everywhere mentality. We also chose Java to take advantage of the JavaFX library, which is a library included in the Java Development Kit that aids in the creation of graphical user interfaces.
 
 If you'd like to learn more about Java, click [here](https://www.java.com/en/about/).
 
@@ -71,45 +71,41 @@ H2 Database was our database of choice, because of it's Java compatibility, it's
 If you'd like to learn more about H2 Database, click [here](http://www.h2database.com/html/main.html).
 
 ###Maven
-Maven is a tool that helps the management of dependencies, as well as helping the build process of the project. We chose to use Maven because of it's ability to manage dependencies. Together with git, it was and _extremely_ useful tool, as it allowed the team to worry about the project, and not about how they were going to manage all of the dependencies. It also helped keep the git repository small, as all of our dependency libraries didn't have to be version controlled.
+Maven is a tool that helps the management of dependencies, as well as helping the build process of the project. We chose to use Maven because of it's ability to manage dependencies. Together with git, it was an _extremely_ useful tool, as it allowed the team to worry about the project, and not about how they were going to manage all of the dependencies. It also helped keep the git repository small, as all of our dependency libraries didn't have to be version controlled.
 
 If you'd like to learn more about Maven, click [here](https://maven.apache.org/).
 
 ---
 
-##Software lifecycle
-Still working on it...
-
----
-
-##Features
-Still working on it...
-
----
-
 ##UML diagrams
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut risus porttitor, placerat dui nec, feugiat arcu. Sed sit amet tortor ex. Fusce ornare egestas molestie. Cras arcu ipsum, maximus id mollis vitae, consectetur ac dolor. Nam blandit eros congue leo scelerisque elementum. Nullam lorem quam, pellentesque vel faucibus quis, lacinia ac ipsum. Vivamus accumsan vel risus vel hendrerit. Phasellus congue laoreet tellus. Praesent ultrices neque ut tempor dictum. Sed imperdiet orci placerat, sodales velit vitae, auctor neque. Fusce libero risus, viverra vel vehicula vel, vehicula et orci. Donec dignissim orci non orci fringilla, sit amet lacinia ligula facilisis. Duis non metus malesuada, molestie enim sit amet, scelerisque magna. Pellentesque rutrum nec nisi et aliquet. Maecenas tristique eu dolor pellentesque pellentesque. Curabitur congue at ipsum ut accumsan.
+Still working on it...
 
 ---
 
 ##Database
-As mentioned before, we chose to use H2 Database for our database implementation. We opted to run H2 in embedded mode, which would allow the database to exist within the application, and create less hassle on the user's end by not requiring them to run an external database.
+As mentioned before, we chose to use H2 Database for our database implementation. We opted to run H2 in embedded mode, which would allow the database to exist within the application, and create less hassle on the user’s end by not requiring them to run an external database.
 
 The tables in the database were optimized to third normal form to keep data from being duplicated within the database. Duplicated data is never a good idea, as data that needs to be changed would have to be changed in multiple tables, making the work harder for ourselves.
 
 ---
 
-##Web interface
+##Web Interface
 As stated above, we chose to use a JavaFX application as our web interface. A couple members of the team had experience using JavaFX before, and it came as a natural choice for our web interface after choosing Java as our main language, as the two would come together really nicely.
 
-###Creating the web interface
-The graphical user interface is designed either by typing out FXML, which is JavaFX’s implementation of the XML language for use with their JavaFX library, or with Scene Builder. Scene Builder is an application by Oracle, the makers of Java and JavaFX, to aid in the creation of JavaFX forms. It uses drag-and-drop containers and controls that allow the user to graphically design a form, with little to no programming involved. After the form is designed in Scene Builder, the form is saved as an FXML file. Whether the file is written manually, or created in Scene Builder, an FXML file is produced.
+###Creation
+The graphical user interface is designed either by typing out FXML manually, which is JavaFX’s implementation of the XML language for use with their JavaFX library, or with Scene Builder. Scene Builder is an application by Oracle, the makers of Java and JavaFX, to aid in the creation of JavaFX forms. It uses drag-and-drop containers and controls that allow the user to graphically design a form, with little to no programming involved. After the form is designed in Scene Builder, the form is saved as an FXML file. Whether the file is written manually, or created in Scene Builder, an FXML file is produced.
 
 If you’d like to learn more about Scene Builder, click [here](http://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-info-2157684.html).
 
 Once the form was created, a controller class was made to program the logic behind the buttons and fields, and tie them to other functions within the application. The form is is then told about the controller class, and everything starts to work like magic.
 
 As a side note, this was also the exact process used when creating the server control panel. It is also a JavaFX application.
+
+###Running in the browser
+This is where the team became a little lost. After many hours of research, we found that to run a JavaFX application in the browser, there were a couple different options available to us. We could either have the application run in the browser, or have the application be downloaded by the browser and started natively on the machine. However, to do any of this, we have to generate a jnlp file and an html page.
+
+After scouring the web for answers on how to generate this jnlp file, we found very little. Much of the documentation we found was either for the old version of JavaFX, or was simply unhelpful. After some tinkering, we eventually found that the IDE we were using, IntelliJ, could actually produce one of these jnlp files for us. By setting up the project to build a JavaFX application artifact, which is basically a bundled package, we were able to produce a jnlp file. We don’t actually have this file anymore, and more information about this problem can be found in [jnlp problems](index.md#jnlp-problems).
+
 
 
 <br><br><br>
@@ -118,24 +114,59 @@ As a side note, this was also the exact process used when creating the server co
 ---
 
 ##What we completed
-In the end we completed the basis for a scheduling web-interface application with a client-server model. Firstly, we were able to create a server that the user was able to launch on the host computer. The server has an interface in which a user can specify a port, launch the server, and end the server. On the client-side, the user is able to launch a web browser and connect to the server to give the client access to the user interface. Using the user interface, a user is able to create very simple activities when the user selected a time and duration for the activity. 
+In the end we completed the basis for a scheduling web-interface application with a client-server model. Firstly, we were able to create a server that the user was able to launch on the host computer. The server has an interface in which a user can specify a port, launch the server, and end the server. On the client-side, the user is able to launch a web browser and connect to the server to give the user access to the client interface. Using the client interface, a user is able to create very simple activities, specifying a start time and duration. 
 
 ---
 
 ##What had to be scrapped
-Currently the application is not able to send information between the server and the client. This means the data created by the application is stored client-side only and cannot be stored on a server. The information that the user can create on the client-side is very limited; the user cannot name activities, remove or edit activities, or create recurring events. Originally the application was going to include several other features such as an automated schedule optimization tool, multiple activity layers, and user logins. These features had to be scrapped to due to a combination of complications during development and lack of time.
+Currently the application is not able to send information between the server and the client. This means the data created by the application is stored client-side only and cannot be stored on a server. The information that the user can create on the client-side is very limited; the user cannot name activities, remove or edit activities, or create recurring events. Originally the application was going to include several other features such as an automated schedule optimization tool, multiple activity layers, and user logins. These features had to be scrapped due to a combination of complications during development and lack of time. See [problems faced](index.md#problems-faced) for more information.
 
 ---
 
 ##Problems faced
 During the development of the scheduler application, the development team ran into a myriad of problems that hindered development. Some of the problems were created at the beginning of the project when the project’s scope was defined. Later on in the project’s development, we determined that we were not going to have enough time to complete the project.
 
+###So much technology
+At first, the team was unsure as to what technologies we wanted to use within the application. Having never created a program consisting of a database, web interface, and embedded server, there was a lot of back and forth between different servers, databases, and approaches to the web interface. This often lead to confusion within the team, and time lost for development, as different technologies were being introduced and thrown away within days of each other.
+
+###Super security
+While attempting to get the client running in the browser, it became apparent after many warning messages, that there was no easy way the client was going to run in the browser without turning off all security. Running Java applications in a browser requires your application to be signed by an official certificate, which lets the browser know that the Java application it’s trying to run is not going to harm the user. This was never taken into account, and being the end of the semester, this was not going to be fixed.
+
+###JNLP problems
+There was very little documentation that could be found about how to produce this much needed jnlp file. The file would allow the client, which was a JavaFX application, to run in the browser. After randomly meddling with the IDE we were using, IntelliJ, we realized we could make IntelliJ generate this file. After doing so, and turning off all security in the process stated in [super security](index.md#super-security), were we then able to get the client running in the browser. The problem is we still don’t know what this jnlp file is _completely_. Yes, we generated one, but what the heck is it? Again, with a lack of useful documentation, it was difficult to know.
+
+###Connection issues
+After turning off all Java browser security to get the client to run in the browser, the challenge was then to connect the server and the client so the client could make database calls. We realized that the server address would have to be given to the client upon start as a parameter, so the client knew how to access the server, and talk to it. The problem comes from not knowing what the jnlp file was, and how to manipulate it. We knew what had to be done, but with both time slipping away from us and not knowing how to manipulate the jnlp file, we labeled it a lost cause to focus on the development of the client interface.
+
+###Other classes
+Towards the end of the semester, the team was struggling to work on the project, as due dates for projects in other classes slowly approached. All of our plates were full, and the application sat at the bottom of it all. There was a moment in the end, where the team had realized the application had not been touched for three weeks.
+
 ---
 
 ##What we would do differently
-Still working on it...
+If the team were to take on this project again with the knowledge that we have now, there would be a few things that would be tackled a little differently.
+
+###Defined roles and tasks
+Now understanding the parts that make up an application like ours, it’d be easier to delegate tasks to team members. In the beginning, not knowing what needed to be done was a challenge, because no one had a defined role or a specific task to accomplish. Having the know how of what’s needed, it would be easier to assign tasks.
+
+###Not Java
+Although Java is a wonderful programming language with an awesome code-once run-everywhere mentality, it’s a major pain when it comes to browsers. Java would probably not be used again for the web interface, and would most likely be replaced by something that has more support, such as HTML5 with Javascript.
+
+###Project structure
+There were strange dependency problems towards the end with the client and the server, and we feel it would have been really nice if both the client and server were separate entities altogether, and then combined in the end.
 
 ---
 
-##Next steps
-Still working on it...
+##Next Steps
+With the semester over, and the application in it’s final state, it’s time to move on. We all agreed the project was a massive learning experience, and we all learned new tricks and techniques that we can take with us into future projects. The application will most likely never be touched again. We’re all sick of it.
+
+###If you’re going to continue it...
+If the application were to be continued, there are a few things that need to be discussed first.
+
+As stated in [project structure](index.md#project-structure), the project structure needs to be fixed. It could have been because we were trying to tackle web app development completely wrong, but the structure never felt right. If the project were properly structured, I feel working on the project would go a lot smoother.
+
+After the project structure is fixed, the infrastructure that makes the client interface run in a browser should be looked at. We couldn’t pass the jnlp file hurdle, due to problems outlined in [problems faced](index.md#problems-faced), but maybe somebody else can. What also comes with that is getting some kind of proper signature for the the application once it’s built, so the browser doesn’t yell at you twenty times, letting you know that what you’re about to run might blow up the world. We, again, didn’t have the time to look into this fully, but maybe somebody else does.
+
+After that, the client interface would need to be finished. That wouldn’t take much compared to the first two obstacles, but still something that would need to be done.
+
+After all that’s completed, the last thing would be to make sure all the database code is correct and works. After that, feel free to add any features you feel should be a part of the application.
